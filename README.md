@@ -6,6 +6,7 @@
 
 Provides [pomdp-solve](http://www.pomdp.org/code/) (Cassandra, 2015) to solve POMDPs using
 a variety of algorithms.
+A convenient interface is provided in package [pomdp](https://github.com/mhahsler/pomdp). 
 
 
 ## Installation

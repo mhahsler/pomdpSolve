@@ -1,6 +1,6 @@
-#' Find the executable for pomdp-solve
+#' Find the executable for 'pomdp-solve'
 #' 
-#' This package installs the executable for pomdp-solve to solve 
+#' This package installs the executable for 'pomdp-solve' to solve 
 #' Partially Observable Decision Processes (POMDPs). We provide a
 #' function to find the installed executable.
 #' 
@@ -60,6 +60,9 @@
 #' observation received is `n`.
 #' 
 #' Details about the file formats and pomdp-solve can be found in the References section.
+#' 
+#' @returns  
+#' `find_pomdp_solve()` returns the path to the 'pomdp-solve' executable as a string or stops with an error.
 #' 
 #' @aliases pomdp-solve pomdpsolve
 #' 

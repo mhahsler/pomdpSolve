@@ -4,12 +4,15 @@
 \alias{find_pomdp_solve}
 \alias{pomdp-solve}
 \alias{pomdpsolve}
-\title{Find the executable for pomdp-solve}
+\title{Find the executable for 'pomdp-solve'}
 \usage{
 find_pomdp_solve()
 }
+\value{
+\code{find_pomdp_solve()} returns the path to the 'pomdp-solve' executable as a string or stops with an error.
+}
 \description{
-This package installs the executable for pomdp-solve to solve
+This package installs the executable for 'pomdp-solve' to solve
 Partially Observable Decision Processes (POMDPs). We provide a
 function to find the installed executable.
 }

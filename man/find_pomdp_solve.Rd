@@ -13,7 +13,7 @@ find_pomdp_solve()
 }
 \description{
 This package installs the executable for 'pomdp-solve' to solve
-Partially Observable Decision Processes (POMDPs). We provide a
+Partially Observable Decision Processes (POMDPs) (Kaelbling et al, 1998). We provide a
 function to find the installed executable.
 }
 \details{
@@ -96,6 +96,11 @@ read.table(file.path(tmp, "tiger.aaai-0.pg"))
 readLines(file.path(tmp, "tiger.aaai-0.alpha"))
 }
 \references{
+Kaelbling, L.P., Littman, M.L., Cassandra, A.R. (1998).
+Planning and acting in partially observable stochastic domains.
+\emph{Artificial Intelligence.} \strong{101} (1–2): 99-134.
+\doi{10.1016/S0004-3702(98)00023-X}
+
 Anthony R. Cassandra, pomdp-solve documentation,
 \url{https://www.pomdp.org/code/index.html}
 }

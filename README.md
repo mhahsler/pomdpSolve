@@ -1,4 +1,4 @@
-# R package pomdpSolve: Provides the pomdp-solve Program for Partially Observable Markov Decision Processes
+# <img src='man/figures/logo.svg' align="right" height="139" /> R package pomdpSolve: Provides the pomdp-solve Program for Partially Observable Markov Decision Processes
 
 [![CRAN version](https://www.r-pkg.org/badges/version/pomdpSolve)](https://cran.r-project.org/package=pomdpSolve)
 [![R build status](https://github.com/mhahsler/pomdpSolve/workflows/R-CMD-check/badge.svg)](https://github.com/mhahsler/pomdpSolve/actions)

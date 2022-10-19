@@ -160,7 +160,7 @@ extern int initVertexEnum( int num_orig_variables );
 /* This frees the memory that was static for all the vertex
    enumeration constraint sets.  It undoes the allocation that the
    routine initMattheis() set up.  */
-extern int cleanUpVertexEnum( );
+extern int cleanUpVertexEnum(void);
 
 /* This routine assumes that all the column related memory stuff has
    already been allocated (i.e., a call to initVertexEnum()).  It will
@@ -172,7 +172,7 @@ extern int cleanUpVertexEnum( );
 extern int startVertexEnum( AlphaList item, AlphaList list );
 
 /* Undoes what startVertexEnum() did.  */
-extern void endVertexEnum( );
+extern void endVertexEnum(void);
 
 /* Repeated calls to this routine will give the entire set of
    vertices.  This assumes that a call has been made to

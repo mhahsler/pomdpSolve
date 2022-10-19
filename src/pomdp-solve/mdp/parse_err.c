@@ -75,7 +75,7 @@ Err_node	*Err_list;		/* GLOBAL error list */
 
 /**********************  ERR_initialize  ******************************/
 void 
-ERR_initialize()
+ERR_initialize(void)
 /*
 	Initializes the linked list of errors by creating the first
 node in that list as empty.  The list will actually start with the
@@ -94,7 +94,7 @@ list might change).
 }  /* ERR_initialize */
 /**********************  ERR_enter  ***********************************/
 void 
-ERR_enter(source, lineno, errorid, modificationString)
+ERR_enter(char* source, int lineno, int errorid, char* modificationString)
 /*
 	The routine will create a new node for the linked list of errors and fill
 it with the proper data.  It will then insert this node into the existing linked
@@ -124,9 +124,6 @@ number and, similiarly, on a first generated-first displayed basis.
 		message is printed out. (if ERR_META is in error message)
 
 */
-	char 	*source;
-	int	lineno,errorid;
-	char	*modificationString;
 {
 	Err_node	*newNode;	/* node for new error */
 
@@ -188,7 +185,7 @@ number and, similiarly, on a first generated-first displayed basis.
 }  /* ERR_enter */
 /*****************************  ERR_dump  ***********************************/
 int 
-ERR_dump()
+ERR_dump(void)
 /*
 	   This function prints out the error messages found in the list
 	Err_list.  Each error
@@ -279,7 +276,7 @@ ERR_dump()
 }  /* ERR_dump */
 /***************************************************************************/
 void 
-ERR_cleanUp() {
+ERR_cleanUp(void) {
    Err_node *temp;
 
    while( Err_list != NULL ) {

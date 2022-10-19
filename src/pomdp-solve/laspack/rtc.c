@@ -71,13 +71,13 @@ Boolean RTCResult(int Iter, double rNorm, double bNorm, IterIdType IterId)
     return(Result);
 }
 
-int GetLastNoIter()
+int GetLastNoIter(void)
 /* get number of iterations performed during last call of a iteration method */
 {
     return(LastNoIter);
 }
 
-double GetLastAccuracy()
+double GetLastAccuracy(void)
 /* get accuracy reached during last call of a iteration method */
 {
     return(LastAcc);

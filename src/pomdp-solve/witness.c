@@ -84,7 +84,7 @@ double *gTempWitness;
 
 /**********************************************************************/
 void 
-initWitness( ) 
+initWitness(void) 
 {
 
   gTempWitness = (double *) XMALLOC( gNumStates * sizeof( double ));
@@ -92,7 +92,7 @@ initWitness( )
 }  /* initWitness */
 /**********************************************************************/
 void 
-cleanUpWitness( ) 
+cleanUpWitness(void) 
 {
 
   XFREE( gTempWitness );

@@ -104,7 +104,7 @@ int gInitialState = INVALID_STATE;
 
 /***************************************************************************/
 double *
-newBeliefState(  ) {
+newBeliefState(void) {
 
   return( (double *) XCALLOC( gNumStates, sizeof( double )));
 }  /* *newBeliefState */
@@ -213,7 +213,7 @@ readMDP( char *filename ) {
 }  /* readMDP */
 /**********************************************************************/
 void 
-allocateIntermediateMDP() {
+allocateIntermediateMDP(void) {
 /*
    Assumes that the gProblemType has been set and that the variables
    gNumStates, gNumActions, and gNumObservation have the appropriate 
@@ -266,7 +266,7 @@ allocateIntermediateMDP() {
 } /* allocateIntermediateMDP */
 /************************************************************************/
 int 
-verifyIntermediateMDP() {
+verifyIntermediateMDP(void) {
 /*
    This routine will make sure that the intermediate form for the MDP
    is valid.  It will check to make sure that the transition and
@@ -302,7 +302,7 @@ verifyIntermediateMDP() {
 }  /* verifyIntermediateMDP */
 /************************************************************************/
 void 
-deallocateIntermediateMDP() {
+deallocateIntermediateMDP(void) {
 /*
    This routine is made available in case something goes wrong
    before converting the matrices from the intermediate form
@@ -335,7 +335,7 @@ deallocateIntermediateMDP() {
 }  /* deallocateIntermediateMDP */
 /**********************************************************************/
 void 
-computeRewards() {
+computeRewards(void) {
   int a, i, j, z, next_state, obs;
   double sum, inner_sum;
 
@@ -395,7 +395,7 @@ computeRewards() {
 }  /* computeRewards */
 /**********************************************************************/
 void 
-convertMatrices() {
+convertMatrices(void) {
 /*
    This routine is called after the parsing has been succesfully done.
    It will assume that the intermediate representations for the transition
@@ -508,7 +508,7 @@ writeMDP( char *filename ) {
 }  /* writeMDP */
 /**********************************************************************/
 void 
-deallocateMDP() {
+deallocateMDP(void) {
   int a;
 
   for( a = 0; a < gNumActions; a++ ) {

@@ -759,7 +759,7 @@ char *yytext;
 #define NORMAL                   0
 
 extern long currentLineNumber;
-extern void ERR_enter();   /* assumes calling program
+extern void ERR_enter(char*, int, int, char*);   /* assumes calling program
                               will initialize error list */
 
 /* These must appear in consecutive order just like they are defined in 
@@ -806,7 +806,7 @@ static int reserved_token[] = {
 
 /**********************************************************************/
 void 
-IntToYylval()
+IntToYylval(void)
 {
 Constant_Block *aConst;
 
@@ -818,7 +818,7 @@ Constant_Block *aConst;
 }
 /**********************************************************************/
 void 
-FloatToYylval()
+FloatToYylval(void)
 {
 Constant_Block *aConst;
 
@@ -830,7 +830,7 @@ Constant_Block *aConst;
 }
 /**********************************************************************/
 void 
-StringToYylval()
+StringToYylval(void)
 /*  This routine will copy a string constant from yytext to the to the 
 yylval.  
 */
@@ -855,7 +855,7 @@ yylval.
 }  /*  */
 /**********************************************************************/
 int 
-CheckReserved() {
+CheckReserved(void) {
   int i;
 
   for( i = 0; i < NUM_RESERVED_WORDS; i++ ) 

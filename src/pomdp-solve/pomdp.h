@@ -70,13 +70,13 @@ extern int gRequireNonNegativeRewards;
    initialization to the most extreme value.  Since the extreme value
    depends on whether or not we are using rewards or costs, we have
    encapsulated this in this routine.  */
-extern double worstPossibleValue();
+extern double worstPossibleValue(void);
 
 /* Often we would like to do some max or min procedure and require
    initialization to the most extreme value.  Since the extreme value
    depends on whether or not we are using rewards or costs, we have
    encapsulated this in this routine.  */
-extern double bestPossibleValue();
+extern double bestPossibleValue(void);
 
 /* Does the necessary things to read in and set-up a POMDP file.  Also
  precomputes which observations are possible and which are not.  */
@@ -84,7 +84,7 @@ extern void initializePomdp( char *filename,
                              double obs_possible_epsilon );
     
 /* Deallocates the POMDP read in by initializePomdp().  */
-extern void cleanUpPomdp(  );
+extern void cleanUpPomdp(void);
 
 /* Although the getEntryMatrix() routine is normally used to extract
   matrix entries, we provide this routine for the immediate reward
@@ -110,7 +110,7 @@ extern double getAdjustedReward( int action, int state );
   have to be scaled (and the value functions that are calculated as
   well.)  This adjustment is either due to a non-negativity constraint
   or a COST utility which was converted to REWARD.  */
-extern int valuesRequireScaling(  );
+extern int valuesRequireScaling(void);
 
 /* Because we use the getAdjustedReward() routine to access the
    rewards, the value function at a given time might not be for the

@@ -39,8 +39,8 @@ struct Node_Struct {
    Node next;
 };
 
-extern void H_create();
-extern void H_destroy();
+extern void H_create(void);
+extern void H_destroy(void);
 extern int H_enter( char *str, Mnemonic_Type type );
 extern int H_lookup( char *str, Mnemonic_Type type );
 

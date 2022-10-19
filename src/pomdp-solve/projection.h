@@ -58,7 +58,7 @@
 
 /* Just creates and returns the storage to hold all the projection
   sets.  They will initially all be NULL.  */
-extern AlphaList **allocateAllProjections(  );
+extern AlphaList **allocateAllProjections(void);
 
 /* Discards all the projection lists and memory associated with them.  */
 extern void freeAllProjections( AlphaList **projection );

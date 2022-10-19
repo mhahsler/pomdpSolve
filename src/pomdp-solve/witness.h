@@ -66,9 +66,9 @@
 /********************   EXTERNAL FUNCTIONS    *************************/
 /**********************************************************************/
 
-extern void initWitness( );
+extern void initWitness(void);
 
-extern void cleanUpWitness( );
+extern void cleanUpWitness(void);
 
 /* The main witness algorithm routine for finding the Q-function
   represention for value iteration with POMDPs.  */

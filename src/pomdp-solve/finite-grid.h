@@ -73,7 +73,7 @@ extern double FG_computeError( AlphaList prev_list,
 extern AlphaList FG_getInitialvalueFunction( PomdpSolveParams param );
 
 extern void initFiniteGrid( PomdpSolveParams param );
-extern void cleanUpFiniteGrid( );
+extern void cleanUpFiniteGrid(void);
 
 extern AlphaList improveFiniteGrid( AlphaList prev_alpha_list,
 							 AlphaList **projection, 

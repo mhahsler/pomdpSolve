@@ -65,10 +65,10 @@
 
 /* Seeds the psuedo-random number generated if it has not already been
   seeded.  */
-extern void randomize();
+extern void randomize(void);
 
 /* Returns a uniform psuedo-random number between 0 and 1 */
-extern double fran();
+extern double fran(void);
 
 /* Returns the current random seed.  Useful if you want to reproduce 
    the sequence (e.g., debugging) */
@@ -85,7 +85,7 @@ extern void setRandomSeedFromString ( char *str );
 extern void displayRandomSeed( FILE *file );
 
 /* Displays the current random seed on stdout. */
-extern void showRandomSeed( );
+extern void showRandomSeed(void);
 
 /* Returns a uniform psuedo-random number between min and max in the 
  form of a double precision number */

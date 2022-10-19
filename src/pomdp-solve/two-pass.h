@@ -72,9 +72,9 @@
 /**************       EXTERNAL FUNCTIONS            ****************/
 /*******************************************************************/
 
-extern void initTwoPass( );
+extern void initTwoPass(void);
 
-extern void cleanUpTwoPass( );
+extern void cleanUpTwoPass(void);
   
 /* The main two-pass algorithm routine for finding the Q-function
   represention for value iteration with POMDPs.  */

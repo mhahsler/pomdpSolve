@@ -80,7 +80,7 @@ MCGS_initialize( PomdpSolveParams param ) {
 
 /**********************************************************************/
 void
-MCGS_cleanup( ) {
+MCGS_cleanup(void) {
 
   /* Nothing to do for now. */
  

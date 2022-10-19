@@ -71,10 +71,10 @@
 /* Many places in the code can use temporary memory storage for
   calculations. This just allocates some useful data structures for
   this purpose.  */
-extern void initCommon(  );
+extern void initCommon(void);
 
 /* Free up any temporary memory that was allocated.  */
-extern void cleanUpCommon(  );
+extern void cleanUpCommon(void);
 
 /* Computes the Bellman residual between two successive value
    funcitons, finding the point of maximal difference between the two

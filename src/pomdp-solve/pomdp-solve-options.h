@@ -875,7 +875,7 @@ extern char* POMDP_SOLVE_OPTS_Vi_Variation_Str[];
  */
 
 extern PomdpSolveProgOptions
-POMDP_SOLVE_OPTS_new( );
+POMDP_SOLVE_OPTS_new(void);
 
 extern void
 POMDP_SOLVE_OPTS_delete( PomdpSolveProgOptions );

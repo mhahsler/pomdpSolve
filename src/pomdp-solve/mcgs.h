@@ -67,7 +67,7 @@
 
 void MCGS_initialize( PomdpSolveParams param );
 
-void MCGS_cleanup( );
+void MCGS_cleanup(void);
 
 extern AlphaList MCGS_improve( AlphaList **projections, 
 						 PomdpSolveParams param );

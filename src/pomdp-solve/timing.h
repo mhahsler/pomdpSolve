@@ -62,7 +62,7 @@ extern void getSecsDetail( double *user_time,
                            double *system_time );
 
 /* Get total CPU time in seconds including user and system time. */
-extern double getSecs( );
+extern double getSecs(void);
 
 /* Report the total secons time in a nicer hr, min sec format with a
    string to label what the time is for.  */

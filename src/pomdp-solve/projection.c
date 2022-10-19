@@ -67,7 +67,7 @@ void dumpProjections( AlphaList **projection );
 
 /**********************************************************************/
 AlphaList **
-allocateAllProjections(  ) 
+allocateAllProjections(void) 
 {
   /*
     Just creates and returns the storage to hold all the projection

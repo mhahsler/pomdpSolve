@@ -35,7 +35,7 @@ Node *Hash_Table;
 
 /**********************************************************************/
 void 
-H_create() {
+H_create(void) {
 
    Hash_Table = (Node *) XCALLOC( HASH_TABLE_SIZE , sizeof( *Hash_Table ));
 
@@ -44,7 +44,7 @@ H_create() {
 }  /* H_init */
 /**********************************************************************/
 void 
-H_destroy() {
+H_destroy(void) {
    Node temp;
    int i;
 

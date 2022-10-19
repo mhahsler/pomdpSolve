@@ -101,7 +101,7 @@ struct CommandLineStruct {
 /*******************************************************/
 
 extern CommandLine 
-CL_new( );
+CL_new(void);
 
 extern void 
 CL_delete( CommandLine );

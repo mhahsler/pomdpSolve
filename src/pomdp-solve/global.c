@@ -85,7 +85,7 @@ double *gTempAlpha;
 
 /**********************************************************************/
 void 
-initGlobal(  ) 
+initGlobal(void) 
 {
   /*
     Sets up and allocates variables that are used globally across
@@ -99,7 +99,7 @@ initGlobal(  )
 }  /* initGlobal */
 /**********************************************************************/
 void 
-cleanUpGlobal(  ) 
+cleanUpGlobal(void) 
 {
   /*
     Cleans up after problem is solved to free any resources and reset
@@ -113,7 +113,7 @@ cleanUpGlobal(  )
 }  /* cleanUpGlobal */
 /**********************************************************************/
 int 
-getPid(  ) 
+getPid(void) 
 {
   /* 
      Just a wrapper to the UN*X getpid() function to isolate it in case

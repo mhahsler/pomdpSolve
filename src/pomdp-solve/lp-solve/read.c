@@ -55,7 +55,7 @@ hashtable        *Hash_tab;
  * because nothing else declares these they are not found
  */
 int        yylineno;
-int yywrap () { return 1; }
+int yywrap (void) { return 1; }
 
 /*
  * errorhandeling routine for yyparse()

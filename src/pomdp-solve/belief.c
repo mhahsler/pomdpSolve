@@ -64,7 +64,7 @@
 
 /**********************************************************************/
 double *
-newBelief( ) 
+newBelief(void) 
 {
   /* 
      Allocate memory for a belief state, whose size is determined by

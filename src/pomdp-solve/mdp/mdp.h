@@ -93,7 +93,7 @@ extern double *gInitialBelief;   /* For POMDPs */
 extern int gInitialState;        /* For MDPs   */
 
 /* Exported functions */
-extern double *newBeliefState();
+extern double *newBeliefState(void);
 extern int transformBeliefState( double *pi,
                                 double *pi_hat,
                                 int a,
@@ -101,12 +101,12 @@ extern int transformBeliefState( double *pi,
 extern void copyBeliefState( double *copy, double *pi );
 extern void displayBeliefState( FILE *file, double *pi );
 extern int readMDP( char *filename );
-extern void convertMatrices();
-extern void deallocateMDP();
-extern void convertMatrices();
-extern int verifyIntermediateMDP();
-extern void deallocateIntermediateMDP();
-extern void allocateIntermediateMDP();
+extern void convertMatrices(void);
+extern void deallocateMDP(void);
+extern void convertMatrices(void);
+extern int verifyIntermediateMDP(void);
+extern void deallocateIntermediateMDP(void);
+extern void allocateIntermediateMDP(void);
 extern int writeMDP( char *filename );
 extern void displayMDPSlice( int state );
 

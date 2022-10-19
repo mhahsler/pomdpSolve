@@ -88,7 +88,7 @@ struct ConfigFileStruct {
 /*******************************************************/
 
 extern ConfigFile  
-CF_new( );
+CF_new(void);
 
 extern void  
 CF_delete( ConfigFile );

@@ -45,23 +45,23 @@ typedef enum { mc_none, mc_trans_single, mc_trans_row, mc_trans_all,
                mc_start_belief, mc_mdp_start, 
                mc_start_include, mc_start_exclude } Matrix_Context;
 
-extern int yylex();
+extern int yylex(void);
 
 /* Forward declaration for action routines which appear at end of file */
 void yyerror(char *string);
-void checkMatrix();
+void checkMatrix(void);
 void enterString( Constant_Block *block );
-void enterUniformMatrix( );
-void enterIdentityMatrix( );
-void enterResetMatrix( );
+void enterUniformMatrix(void);
+void enterIdentityMatrix(void);
+void enterResetMatrix(void);
 void enterMatrix( double value );
 void setMatrixContext( Matrix_Context context, 
                       int a, int i, int j, int obs );
 void enterStartState( int i );
-void setStartStateUniform();
-void endStartStates();
-void verifyPreamble();
-void checkProbs();
+void setStartStateUniform(void);
+void endStartStates(void);
+void verifyPreamble(void);
+void checkProbs(void);
 
 /*  Helps to give more meaningful error messages */
 long currentLineNumber = 1;
@@ -773,7 +773,7 @@ yyerror(char *string)
 }  /* yyerror */
 /******************************************************************************/
 void 
-checkMatrix() {
+checkMatrix(void) {
 /* When a matrix is finished being read for the exactly correct number of
    values, curRow should be 0 and curCol should be -1.  For the cases
    where we are only interested in a row of entries curCol should be -1.
@@ -897,7 +897,7 @@ enterString( Constant_Block *block ) {
 }  /* enterString */
 /******************************************************************************/
 void 
-enterUniformMatrix( ) {
+enterUniformMatrix(void) {
    int a, i, j, obs;
    double prob;
 
@@ -946,7 +946,7 @@ enterUniformMatrix( ) {
 }  /* enterUniformMatrix */
 /******************************************************************************/
 void 
-enterIdentityMatrix( ) {
+enterIdentityMatrix(void) {
    int a, i,j;
 
    switch( curMatrixContext ) {
@@ -967,7 +967,7 @@ enterIdentityMatrix( ) {
 }  /* enterIdentityMatrix */
 /******************************************************************************/
 void 
-enterResetMatrix( ) {
+enterResetMatrix(void) {
   int a, i, j;
 
   if( curMatrixContext != mc_trans_row ) {
@@ -1396,7 +1396,7 @@ enterStartState( int i ) {
 }  /* enterStartState */
 /******************************************************************************/
 void 
-setStartStateUniform() {
+setStartStateUniform(void) {
   int i;
   double prob;
 
@@ -1410,7 +1410,7 @@ setStartStateUniform() {
 }  /*  setStartStateUniform*/
 /******************************************************************************/
 void 
-endStartStates() {
+endStartStates(void) {
 /*
    There are a few cases where the matrix context will not be
    set at this point.  When there is a list of probabilities
@@ -1458,7 +1458,7 @@ endStartStates() {
 }  /* endStartStates */
 /******************************************************************************/
 void 
-verifyPreamble() {
+verifyPreamble(void) {
 /* 
    When a param is not defined, set these to non-zero so parsing can
    proceed even in the absence of specifying these values.  When an
@@ -1495,7 +1495,7 @@ verifyPreamble() {
 }  /* verifyPreamble */
 /******************************************************************************/
 void 
-checkProbs() {
+checkProbs(void) {
    int a,i,j;
    //int a,i,j,obs;
    double sum;
@@ -1532,7 +1532,7 @@ checkProbs() {
 }  /* checkProbs */
 /************************************************************************/
 void 
-initParser() {
+initParser(void) {
 /*
    This routine will reset all the state variables used by the parser
    in case it will parse multiple files.
@@ -1593,7 +1593,7 @@ readMDPFile( FILE *file ) {
 
 /************************************************************************/
 int
-yymdpwrap()
+yymdpwrap(void)
 {
    return 1;
 }

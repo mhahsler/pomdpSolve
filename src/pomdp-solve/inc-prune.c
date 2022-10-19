@@ -63,13 +63,13 @@
 
 /**********************************************************************/
 void 
-initIncPrune( ) 
+initIncPrune(void) 
 {
 
 }  /* initCrossSum */
 /**********************************************************************/
 void 
-cleanUpIncPrune(  ) 
+cleanUpIncPrune(void) 
 {
 
 }  /* cleanUpCrossSum */

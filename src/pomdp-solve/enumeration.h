@@ -70,9 +70,9 @@ extern int gNumVectorsEnum;
 /********************   EXTERNAL FUNCTIONS    *************************/
 /**********************************************************************/
 
-extern void initEnumeration();
+extern void initEnumeration(void);
 
-extern void cleanUpEnumeration( );
+extern void cleanUpEnumeration(void);
       
 /* This is the routine to call to do the enumeration exact POMDP
   algorithm given a set of this epochs projection vectors.  */

@@ -145,7 +145,7 @@ typedef enum {
 extern char* Boolean_Str[];
 
 extern ProgramOptions 
-PO_new( );
+PO_new(void);
 
 extern void 
 PO_delete( ProgramOptions );

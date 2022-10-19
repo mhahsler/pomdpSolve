@@ -477,7 +477,7 @@ extern char *inc_prune_type_str[];
 
 /* Creates the memory for the structure to hold the parameters used in
    solving a POMDP.  Also sets the fields to the default values.  */
-extern PomdpSolveParams newPomdpSolveParams(  );
+extern PomdpSolveParams newPomdpSolveParams(void);
 
 /* Frees the memory for pointers in the params and the param structure
    itself.

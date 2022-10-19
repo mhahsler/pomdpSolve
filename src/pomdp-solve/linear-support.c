@@ -80,7 +80,7 @@ int gNumVertices;
 
 /**********************************************************************/
 void 
-initLinSupport( ) 
+initLinSupport(void) 
 {
 
 #ifndef HAVE_LIBCPLEX
@@ -92,7 +92,7 @@ initLinSupport( )
 }  /* initLinSupport */
 /**********************************************************************/
 void 
-cleanUpLinSupport( ) 
+cleanUpLinSupport(void) 
 {
   
   cleanUpVertexEnum( );
@@ -276,7 +276,7 @@ findVertices( VertexList vertex_list,
 }  /* findVertices */
 /**********************************************************************/
 VertexList 
-initVertexList(  ) 
+initVertexList(void) 
 {
   int i;
   VertexList 

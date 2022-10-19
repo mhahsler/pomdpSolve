@@ -89,7 +89,7 @@ char* POMDP_SOLVE_OPTS_Vi_Variation_Str[] = POMDP_SOLVE_OPTS_OPT_VI_VARIATION_ST
 
 /*******************************************************/
 PomdpSolveProgOptions
-POMDP_SOLVE_OPTS_new( )
+POMDP_SOLVE_OPTS_new(void)
 {
 
   PomdpSolveProgOptions options;

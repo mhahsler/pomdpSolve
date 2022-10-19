@@ -195,13 +195,13 @@ improveEnumeration( AlphaList **projection,
  }  /* improveEnumeration  */
 /**********************************************************************/
 void 
-initEnumeration() 
+initEnumeration(void) 
 {
 
 }  /* initEnumeration */
 /**********************************************************************/
 void 
-cleanUpEnumeration( ) 
+cleanUpEnumeration(void) 
 {
 
 }  /* cleanUpEnumeration */

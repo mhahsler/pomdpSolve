@@ -309,7 +309,7 @@ genInitialDerivedBeliefStates( PomdpSolveParams param )
 /* Adds the simplex corners to the finite grid of belief points.
 */
 void 
-FG_addSimplexCorners( )
+FG_addSimplexCorners(void)
 {
   int i, j;
 
@@ -336,7 +336,7 @@ FG_addSimplexCorners( )
    have to fill in the non-zeroes.  It adds these relative to the
    current size of the grid (so they can be added anywhere.)  
 */
-void FG_addPairwise( ) 
+void FG_addPairwise(void) 
 {
   int i, j, k;
 
@@ -480,7 +480,7 @@ initFiniteGrid( PomdpSolveParams param )
 } /* initFiniteGrid */
 /**********************************************************************/
 void 
-cleanUpFiniteGrid( )
+cleanUpFiniteGrid(void)
 {
   
   XFREE( gFGTempBelief );

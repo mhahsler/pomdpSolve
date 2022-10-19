@@ -124,7 +124,7 @@ relinkObsSources( AlphaList list )
 }  /* relinkObsSources */
 /**********************************************************************/
 void 
-initCommon(  ) 
+initCommon(void) 
 {
   /*
     Many places in the code can use temporary memory storage for
@@ -154,7 +154,7 @@ initCommon(  )
 }  /* initCommon */
 /**********************************************************************/
 void 
-cleanUpCommon(  ) 
+cleanUpCommon(void) 
 {
   /*
     Free up any temporary memory that was allocated.

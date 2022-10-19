@@ -73,13 +73,13 @@
  
 /**********************************************************************/
 void 
-initTwoPass( ) 
+initTwoPass(void) 
 {
 
 }  /* initTwoPass */
 /**********************************************************************/
 void 
-cleanUpTwoPass( ) 
+cleanUpTwoPass(void) 
 {
 
 }  /* cleanUpTwoPass */

@@ -93,7 +93,7 @@ getSecsDetail( double *user_time, double *system_time )
 }  /* getSecsDetail */
 /**********************************************************************/
 double 
-getSecs( ) 
+getSecs(void) 
 {
   /* Get total CPU time in seconds including user and system time. */
   double user_time, system_time;

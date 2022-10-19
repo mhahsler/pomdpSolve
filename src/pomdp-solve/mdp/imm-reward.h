@@ -80,11 +80,11 @@ struct Imm_Reward_Node_Struct {
   Imm_Reward_List next;
 };
 
-extern void destroyImmRewards();
+extern void destroyImmRewards(void);
 extern void newImmReward( int action, int cur_state, int next_state, int obs );
 extern void enterImmReward( int cur_state, int next_state, int obs, 
 			   double value );
-extern void doneImmReward();
+extern void doneImmReward(void);
 extern double getImmediateReward( int action, int cur_state, int
 				 next_state, int obs );
 				 

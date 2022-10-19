@@ -270,7 +270,7 @@ initVertexEnum( int num_orig_variables )
 }  /* initVertexEnum */
 /**********************************************************************/
 int 
-cleanUpVertexEnum( ) 
+cleanUpVertexEnum(void) 
 {
   /*
     This frees the memory that was static for all the vertex enumeration
@@ -687,7 +687,7 @@ allocateTempMemory( LP lp )
 } /* allocateTempMemory */
 /**********************************************************************/
 void 
-freeTempMemory() 
+freeTempMemory(void) 
 {
    
    /* Undoes the allocation done by allocateTempMemory() */
@@ -1961,7 +1961,7 @@ startVertexEnum( AlphaList item, AlphaList list )
 }  /* startVertexEnum */
 /**********************************************************************/
 void 
-endVertexEnum( ) 
+endVertexEnum(void) 
 {
   /*
     Undoes what startVertexEnum() did.

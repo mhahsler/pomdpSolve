@@ -158,7 +158,7 @@ updateBeliefState( double *b,
 
 /**********************************************************************/
 Trajectory 
-newTrajectoryNode( ) 
+newTrajectoryNode(void) 
 {
   /*
     Allocates the memory for one node in a trajectory linked list.

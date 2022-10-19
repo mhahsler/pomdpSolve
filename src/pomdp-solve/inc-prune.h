@@ -75,9 +75,9 @@
 /********************   EXTERNAL FUNCTIONS    *************************/
 /**********************************************************************/
 
-extern void initIncPrune( );
+extern void initIncPrune(void);
 
-extern void cleanUpIncPrune(  );
+extern void cleanUpIncPrune(void);
   
 /* The main incremental pruning algorithm routine for finding the
   Q-function represention for value iteration with POMDPs.  */

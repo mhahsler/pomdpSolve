@@ -94,7 +94,7 @@ char* Boolean_Str[] = OPT_BOOLEAN_STRINGS;
 
 /*******************************************************/
 ProgramOptions  
-PO_new( )
+PO_new(void)
 {
   ProgramOptions opts;
   

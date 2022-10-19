@@ -69,7 +69,7 @@ int *gNumPossibleObservations;
 int gRequireNonNegativeRewards = FALSE;
 
 /**********************************************************************/
-double worstPossibleValue() {
+double worstPossibleValue(void) {
 /*
   Often we would like to do some max or min procedure and require
   initialization to the most extreme value.  This routine used to
@@ -82,7 +82,7 @@ double worstPossibleValue() {
 
 }  /* worstPossibleValue */
 /**********************************************************************/
-double bestPossibleValue() {
+double bestPossibleValue(void) {
 /*
    Often we would like to do some max or min procedure and require
    initialization to the most extreme value.  This routine used to
@@ -192,7 +192,7 @@ void initializePomdp( char *filename,
 
 }  /* initializePomdp */
 /**********************************************************************/
-void cleanUpPomdp(  ) {
+void cleanUpPomdp(void) {
 /*
   Deallocates the POMDP read in by initializePomdp().
 */
@@ -244,7 +244,7 @@ double getAdjustedReward( int action, int state ) {
 
 }  /* getAdjustedReward */
 /**********************************************************************/
-int valuesRequireScaling(  ) {
+int valuesRequireScaling(void) {
 /*
   Returns a boolean value as to whether or not the immediate rewards
   have to be scaled (and the value functions that are calculated as

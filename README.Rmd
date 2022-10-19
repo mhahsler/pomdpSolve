@@ -17,6 +17,11 @@ A convenient interface is provided in package [pomdp](https://github.com/mhahsle
 pkg_install(pkg)
 ```
 
+## How to Cite this Package
+```{r echo=FALSE, results = 'asis'}
+citation(pkg)
+```
+
 ## References
 
 * Cassandra, A. (2015). pomdp-solve: POMDP Solver Software, http://www.pomdp.org.

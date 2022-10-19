@@ -60,7 +60,7 @@
 
 /*******************************************************/
 CommandLine
-CL_new( )
+CL_new(void)
 {
   /*
     Constructor that allocated memory for data structure.

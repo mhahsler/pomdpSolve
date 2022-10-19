@@ -314,7 +314,7 @@ setMemoryLimit( int mem_size_limit )
 }  /* setMemoryLimit */
 /**********************************************************************/
 void 
-setUpCtrlC(  ) 
+setUpCtrlC(void) 
 {
   /*
     Registers the signal handler for the SIGINT signal which is

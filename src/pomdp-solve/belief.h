@@ -78,7 +78,7 @@ struct BeliefListStruct {
 /********************   EXTERNAL FUNCTIONS    *************************/
 /**********************************************************************/
 
-extern double *newBelief( );
+extern double *newBelief(void);
 extern double *duplicateBelief( double *b );
 extern void copyBelief( double *dest, double *src );
 extern void destroyBelief( double *b );

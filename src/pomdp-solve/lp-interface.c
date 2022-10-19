@@ -145,7 +145,7 @@ LP_setPrecision( double epsilon )
 } /* LP_setPrecision */
 /**********************************************************************/
 double 
-LP_getPrecision(  ) 
+LP_getPrecision(void) 
 {
   return( gLpEpsilon );
 }  /* LP_getPrecision */
@@ -265,7 +265,7 @@ initLpInterface( PomdpSolveParams param )
 }  /* initLpInterface */
 /**********************************************************************/
 void 
-cleanUpLpInterface(  ) 
+cleanUpLpInterface(void) 
 {
   /*
     Free up any temporary memory that was allocated.

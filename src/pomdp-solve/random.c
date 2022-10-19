@@ -79,7 +79,7 @@ create(int maxnum)
 }  /* create */
 /**********************************************************************/
 static void 
-init_randomizer()
+init_randomizer(void)
 {
 
   int i;
@@ -99,7 +99,7 @@ init_randomizer()
 }  /* init_randomizer */
 /**********************************************************************/
 void 
-randomize()
+randomize(void)
 {
 /*
   Seeds the psuedo-random number generated if it has not already been
@@ -110,7 +110,7 @@ randomize()
 }  /* randomize */
 /**********************************************************************/
 double 
-fran() 
+fran(void) 
 { 
   /* Returns a uniform psuedo-random number between 0 and 1 */
 
@@ -182,7 +182,7 @@ displayRandomSeed( FILE *file )
 }  /* displayRandomSeed */
 /**********************************************************************/
 void 
-showRandomSeed(  ) 
+showRandomSeed(void) 
 {
   /* 
      Display random seed to stdout. 

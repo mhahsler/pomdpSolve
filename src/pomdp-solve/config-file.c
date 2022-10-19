@@ -58,7 +58,7 @@
 
 /*******************************************************/
 ConfigFile  
-CF_new( )
+CF_new(void)
 {
   ConfigFile cfg;
   

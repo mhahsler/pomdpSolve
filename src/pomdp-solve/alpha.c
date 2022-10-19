@@ -64,7 +64,7 @@
 /******************   Alpha Vector Routines      **********************/
 /**********************************************************************/
 double *
-newAlpha( ) 
+newAlpha(void) 
 {
   /* 
      Allocate memory for an alpha vector, whose size is determined by
@@ -271,7 +271,7 @@ isDominatedVector( double *alpha1, double *alpha2 )
 /******************  Obs_Source Routines         **********************/
 /**********************************************************************/
 AlphaList *
-newObsSourceArray(  ) 
+newObsSourceArray(void) 
 {
   /*
     Just a convenient function for getting a pointer to an array of
@@ -589,7 +589,7 @@ initAlphaList( AlphaList list )
 }  /* inittAlphaList */
 /**********************************************************************/
 AlphaList 
-newAlphaList( ) 
+newAlphaList(void) 
 {
   /*
     Allocates the memory for the header node of a new alpha list. 

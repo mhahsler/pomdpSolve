@@ -297,16 +297,16 @@ extern double *gTempAlpha;
 /* Sets up and allocates variables that are used globally across
   modules in the program. Currently just allocates a bunch of scratch
   memory areas.  */
-extern void initGlobal(  );
+extern void initGlobal(void);
 
 /* Cleans up after problem is solved to free any resources and reset
   anything that the initGlobal() routine did.  */
-extern void cleanUpGlobal(  );
+extern void cleanUpGlobal(void);
   
 /* Just a wrapper to the UN*X getpid() function to isolate it in case
    this gets ported to another platform.  Note that for POSIX, the
    'pid_t' type returned by getpid() is an 'int'.  */
-extern int getPid(  );
+extern int getPid(void);
 
 /* Just a wrapper to the UN*X unlink() function to isolate it in case
    this gets ported to another platform.  */

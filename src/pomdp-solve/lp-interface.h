@@ -220,7 +220,7 @@ extern void LP_setPrecision( double epsilon );
 extern void initLpInterface( PomdpSolveParams param );
 
 /* Free up any temporary memory that was allocated.  */
-extern void cleanUpLpInterface(  );
+extern void cleanUpLpInterface(void);
 
 /**********************************************************************/
 /**********          LP Interfacing Routines             **************/

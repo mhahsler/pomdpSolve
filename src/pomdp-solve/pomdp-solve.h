@@ -73,7 +73,7 @@ extern void cleanUpPomdpSolve( PomdpSolveParams param );
 extern void solvePomdp( PomdpSolveParams param );
 
 /* For now our default policy is just all zeroes.  */
-extern AlphaList getDefaultInitialPolicy( );
+extern AlphaList getDefaultInitialPolicy( PomdpSolveParams param );
 
 /* Some algorithms will solve one iteration of POMDP value iteration
    by breaking the problem into a separate one for each action.  This

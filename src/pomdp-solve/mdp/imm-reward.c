@@ -113,7 +113,7 @@ Imm_Reward_List gImmRewardList = NULL;
 
 /**********************************************************************/
 void 
-destroyImmRewards() {
+destroyImmRewards(void) {
   Imm_Reward_List temp;
 
   while( gImmRewardList != NULL ) {
@@ -282,7 +282,7 @@ enterImmReward( int cur_state, int next_state, int obs,
 }  /* enterImmReward */
 /**********************************************************************/
 void 
-doneImmReward() {
+doneImmReward(void) {
   
   if( gCurImmRewardNode == NULL )
     return;

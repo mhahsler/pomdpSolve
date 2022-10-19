@@ -82,7 +82,7 @@ char *vi_variation_type_str[] = VI_VARIATION_TYPE_STRINGS;
 
 /**********************************************************************/
 PomdpSolveParams 
-newPomdpSolveParams(  ) 
+newPomdpSolveParams(void) 
 {
   /*
     Creates the memory for the structure to hold the parameters used in
@@ -225,7 +225,7 @@ enforceSmallestPrecision( double *value, char *name )
 
 /**********************************************************************/
 void
-doPreOptionParseActions( ) {
+doPreOptionParseActions(void) {
   /*
     The very first routine that is called. Put anything that needs to
     happen before parsing the command line in this routine. 

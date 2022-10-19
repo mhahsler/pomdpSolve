@@ -161,7 +161,7 @@ struct AlphaListType {
 
 /* Allocate memory for an alpha vector, whose size is determined by
    the number of states.  */
-extern double *newAlpha( );
+extern double *newAlpha(void);
 
 
 /* Makes a copy of the alpha vector also allocating the memory for it.  */
@@ -222,7 +222,7 @@ extern int isDominatedVector( double *alpha1,
 /* Just a convenient function for getting a pointer to an array of
   AlphaList pointers for the obs_source field of the AlphaList
   nodes. Initializes the array to have all NULL vectors.  */
-extern AlphaList *newObsSourceArray(  );
+extern AlphaList *newObsSourceArray(void);
 
 /* Allocates memory for and copies the obs_source array and returns a
   pointer to the new memory.  */
@@ -289,7 +289,7 @@ extern void addWitnessToAlphaNode( AlphaList node,
 extern void initAlphaList( AlphaList list );
 
 /* Allocates the memory for the header node of a new alpha list.  */
-extern AlphaList newAlphaList(  );
+extern AlphaList newAlphaList(void);
 
 /* Renumbers the alpha list so vectors are numbered sequentially.  */
 extern void renumberAlphaList( AlphaList list );

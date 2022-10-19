@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.4.1.  */
+/* A Bison parser, made by GNU Bison 3.8.2.  */
 
 /* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2019 Free Software Foundation,
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
    Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -31,8 +31,9 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* Undocumented macros, especially those whose name start with YY_,
-   are private implementation details.  Do not rely on them.  */
+/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
+   especially those whose name start with YY_ or yy_.  They are
+   private implementation details that can be changed or removed.  */
 
 #ifndef YY_YYMDP_Y_TAB_H_INCLUDED
 # define YY_YYMDP_Y_TAB_H_INCLUDED
@@ -44,38 +45,47 @@
 extern int yymdpdebug;
 #endif
 
-/* Token type.  */
+/* Token kinds.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
   enum yytokentype
   {
-    INTTOK = 1,
-    FLOATTOK = 2,
-    COLONTOK = 3,
-    MINUSTOK = 4,
-    PLUSTOK = 5,
-    STRINGTOK = 6,
-    ASTERICKTOK = 7,
-    DISCOUNTTOK = 8,
-    VALUESTOK = 9,
-    STATETOK = 10,
-    ACTIONTOK = 11,
-    OBSTOK = 12,
-    TTOK = 13,
-    OTOK = 14,
-    RTOK = 15,
-    UNIFORMTOK = 16,
-    IDENTITYTOK = 17,
-    REWARDTOK = 18,
-    COSTTOK = 19,
-    RESETTOK = 20,
-    STARTTOK = 21,
-    INCLUDETOK = 22,
-    EXCLUDETOK = 23,
-    EOFTOK = 258
+    YYEMPTY = -2,
+    YYEOF = 0,                     /* "end of file"  */
+    YYerror = 256,                 /* error  */
+    YYUNDEF = 259,                 /* "invalid token"  */
+    INTTOK = 1,                    /* INTTOK  */
+    FLOATTOK = 2,                  /* FLOATTOK  */
+    COLONTOK = 3,                  /* COLONTOK  */
+    MINUSTOK = 4,                  /* MINUSTOK  */
+    PLUSTOK = 5,                   /* PLUSTOK  */
+    STRINGTOK = 6,                 /* STRINGTOK  */
+    ASTERICKTOK = 7,               /* ASTERICKTOK  */
+    DISCOUNTTOK = 8,               /* DISCOUNTTOK  */
+    VALUESTOK = 9,                 /* VALUESTOK  */
+    STATETOK = 10,                 /* STATETOK  */
+    ACTIONTOK = 11,                /* ACTIONTOK  */
+    OBSTOK = 12,                   /* OBSTOK  */
+    TTOK = 13,                     /* TTOK  */
+    OTOK = 14,                     /* OTOK  */
+    RTOK = 15,                     /* RTOK  */
+    UNIFORMTOK = 16,               /* UNIFORMTOK  */
+    IDENTITYTOK = 17,              /* IDENTITYTOK  */
+    REWARDTOK = 18,                /* REWARDTOK  */
+    COSTTOK = 19,                  /* COSTTOK  */
+    RESETTOK = 20,                 /* RESETTOK  */
+    STARTTOK = 21,                 /* STARTTOK  */
+    INCLUDETOK = 22,               /* INCLUDETOK  */
+    EXCLUDETOK = 23,               /* EXCLUDETOK  */
+    EOFTOK = 258                   /* EOFTOK  */
   };
+  typedef enum yytokentype yytoken_kind_t;
 #endif
-/* Tokens.  */
+/* Token kinds.  */
+#define YYEMPTY -2
+#define YYEOF 0
+#define YYerror 256
+#define YYUNDEF 259
 #define INTTOK 1
 #define FLOATTOK 2
 #define COLONTOK 3
@@ -111,7 +121,7 @@ union YYSTYPE
   int i_num;
   double f_num;
 
-#line 115 "y.tab.h"
+#line 125 "y.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -122,6 +132,8 @@ typedef union YYSTYPE YYSTYPE;
 
 extern YYSTYPE yymdplval;
 
+
 int yymdpparse (void);
+
 
 #endif /* !YY_YYMDP_Y_TAB_H_INCLUDED  */

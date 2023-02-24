@@ -140,7 +140,7 @@ POMDP_SOLVE_OPTS_new(void)
   options->proj_purge = POMDP_SOLVE_OPTS_OPT_PROJ_PURGE_DEFAULT;
   options->mcgs_traj_length = POMDP_SOLVE_OPTS_OPT_MCGS_TRAJ_LENGTH_DEFAULT;
   options->epoch_history_window_delta = 0;
-  options->true[0] = '\0';
+  options->true_[0] = '\0';
   options->epsilon_adjust_factor = 0.0;
   options->grid_filename[0] = '\0';
   options->prune_init_rand_points = 0;
@@ -286,7 +286,7 @@ POMDP_SOLVE_OPTS_toConfigFile( PomdpSolveProgOptions options )
   sprintf( str, "%d", options->epoch_history_window_delta );
   CF_addParam( cfg, POMDP_SOLVE_OPTS_CFG_HISTORY_DELTA_STR, str );
 
-  sprintf( str, "%s", options->true );
+  sprintf( str, "%s", options->true_ );
   CF_addParam( cfg, POMDP_SOLVE_OPTS_CFG_F_STR, str );
 
   sprintf( str, "%.6f", options->epsilon_adjust_factor );
@@ -337,33 +337,43 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
   /*******************************/
   fprintf( file, "General options:\n" );
 
-  PO_showUsageEnumType( file,
-                     POMDP_SOLVE_OPTS_ARG_FORCE_ROUNDING_STR,
-                     Boolean_Str );
   fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_STDOUT_STR );
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_SAVE_PENULTIMATE_STR,
                      Boolean_Str );
-  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_RAND_SEED_STR );
   fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_F_STR );
+  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_RAND_SEED_STR );
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_FORCE_ROUNDING_STR,
+                     Boolean_Str );
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_STAT_SUMMARY_STR,
                      Boolean_Str );
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_VERBOSE_STR,
+                     POMDP_SOLVE_OPTS_Verbose_Str );
 
   /*******************************/
   /* Resource Limits parameters  */
   /*******************************/
+  /* Disabled in the R version
   fprintf( file, "Resource Limits options:\n" );
 
   fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_TIME_LIMIT_STR );
   fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MEMORY_LIMIT_STR );
+  */
 
   /*******************************/
   /* Algorithm parameters  */
   /*******************************/
   fprintf( file, "Algorithm options:\n" );
 
-  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_PRUNE_FREQ_STR );
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_METHOD_STR,
+                     POMDP_SOLVE_OPTS_Method_Str );
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_ENUM_PURGE_STR,
+                     POMDP_SOLVE_OPTS_Enum_Purge_Str );
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_INC_PRUNE_STR,
                      POMDP_SOLVE_OPTS_Inc_Prune_Str );
@@ -371,16 +381,8 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
                      POMDP_SOLVE_OPTS_ARG_FG_SAVE_STR,
                      Boolean_Str );
   PO_showUsageEnumType( file,
-                     POMDP_SOLVE_OPTS_ARG_ENUM_PURGE_STR,
-                     POMDP_SOLVE_OPTS_Enum_Purge_Str );
-  PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_FG_TYPE_STR,
                      POMDP_SOLVE_OPTS_Fg_Type_Str );
-  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_TRAJ_ITER_COUNT_STR );
-  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_NUM_TRAJ_STR );
-  PO_showUsageEnumType( file,
-                     POMDP_SOLVE_OPTS_ARG_METHOD_STR,
-                     POMDP_SOLVE_OPTS_Method_Str );
   fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_FG_POINTS_STR );
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_FG_PURGE_STR,
@@ -388,14 +390,20 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_FG_NONNEG_REWARDS_STR,
                      Boolean_Str );
-  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_TRAJ_LENGTH_STR );
   fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_GRID_FILENAME_STR );
+  /* Not implemented yet!
+  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_TRAJ_ITER_COUNT_STR );
+  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_NUM_TRAJ_STR );
+  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_TRAJ_LENGTH_STR );
+  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_PRUNE_FREQ_STR );
+  */
 
   /*******************************/
   /* Optimization parameters  */
   /*******************************/
   fprintf( file, "Optimization options:\n" );
 
+  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_EPSILON_STR );
   fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_PRUNE_EPSILON_STR );
   fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_FG_EPSILON_STR );
   fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_LP_EPSILON_STR );
@@ -406,7 +414,6 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
                      POMDP_SOLVE_OPTS_ARG_Q_PURGE_STR,
                      POMDP_SOLVE_OPTS_Q_Purge_Str );
   fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_ALG_RAND_STR );
-  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_EPSILON_STR );
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_PROJ_PURGE_STR,
                      POMDP_SOLVE_OPTS_Proj_Purge_Str );
@@ -418,11 +425,13 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
   /*******************************/
   /* Debug parameters  */
   /*******************************/
+  /* is now in general 
   fprintf( file, "Debug options:\n" );
 
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_VERBOSE_STR,
                      POMDP_SOLVE_OPTS_Verbose_Str );
+  */
 
   /*******************************/
   /* Value Iteration parameters  */
@@ -780,7 +789,7 @@ POMDP_SOLVE_OPTS_parse( ProgramOptions opts )
 
   ret_value = PO_getStringOption( opts,
                          POMDP_SOLVE_OPTS_ARG_F_STR,
-                         options->true,
+                         options->true_,
                          NULL,
                          NULL );
   if ( ret_value == PO_OPT_PRESENT_ERROR )

@@ -58,6 +58,7 @@
 #include <time.h>
 #include <unistd.h>
 
+/* Time limit is disabled*/
 #define DISABLE_TIME_LIMIT
 
 #ifndef DISABLE_TIME_LIMIT

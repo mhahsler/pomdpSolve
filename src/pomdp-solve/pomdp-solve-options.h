@@ -245,6 +245,7 @@ typedef enum {
     "" \
   }
 
+/*
 #define POMDP_SOLVE_OPTS_OPT_METHOD_STRINGS { \
     "enum", \
     "twopass", \
@@ -253,6 +254,16 @@ typedef enum {
     "incprune", \
     "grid", \
     "mcgs", \
+    "" \
+  }
+*/
+
+#define POMDP_SOLVE_OPTS_OPT_METHOD_STRINGS { \
+    "enum", \
+    "twopass", \
+    "witness", \
+    "incprune", \
+    "grid", \
     "" \
   }
 
@@ -642,7 +653,7 @@ struct PomdpSolveProgOptionsStruct {
   /*
    * What configuration file should be read.
    */
-  char true[MAX_OPT_STRING_LEN];
+  char true_[MAX_OPT_STRING_LEN];
 
   /*
    *  When solving using the 'adjustable_epsilon' method of value

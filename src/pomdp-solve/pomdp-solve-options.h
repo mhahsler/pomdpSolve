@@ -245,7 +245,6 @@ typedef enum {
     "" \
   }
 
-/*
 #define POMDP_SOLVE_OPTS_OPT_METHOD_STRINGS { \
     "enum", \
     "twopass", \
@@ -256,16 +255,7 @@ typedef enum {
     "mcgs", \
     "" \
   }
-*/
 
-#define POMDP_SOLVE_OPTS_OPT_METHOD_STRINGS { \
-    "enum", \
-    "twopass", \
-    "witness", \
-    "incprune", \
-    "grid", \
-    "" \
-  }
 
 #define POMDP_SOLVE_OPTS_OPT_FG_PURGE_STRINGS { \
     "none", \

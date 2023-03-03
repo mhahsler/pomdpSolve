@@ -337,15 +337,12 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
   /*******************************/
   fprintf( file, "General options:\n" );
 
+  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_POMDP_STR );
   fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_STDOUT_STR );
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_SAVE_PENULTIMATE_STR,
                      Boolean_Str );
-  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_F_STR );
-  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_RAND_SEED_STR );
-  PO_showUsageEnumType( file,
-                     POMDP_SOLVE_OPTS_ARG_FORCE_ROUNDING_STR,
-                     Boolean_Str );
+  // fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_F_STR );
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_STAT_SUMMARY_STR,
                      Boolean_Str );
@@ -366,7 +363,7 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
   /*******************************/
   /* Algorithm parameters  */
   /*******************************/
-  fprintf( file, "Algorithm options:\n" );
+  fprintf( file, "\nAlgorithm options:\n" );
 
   PO_showUsageEnumType( file,
                      POMDP_SOLVE_OPTS_ARG_METHOD_STR,
@@ -391,17 +388,58 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
                      POMDP_SOLVE_OPTS_ARG_FG_NONNEG_REWARDS_STR,
                      Boolean_Str );
   fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_GRID_FILENAME_STR );
+  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_RAND_SEED_STR );
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_FORCE_ROUNDING_STR,
+                     Boolean_Str );
   /* Not implemented yet!
   fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_TRAJ_ITER_COUNT_STR );
   fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_NUM_TRAJ_STR );
   fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_TRAJ_LENGTH_STR );
   fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_MCGS_PRUNE_FREQ_STR );
   */
+  
+  /*******************************/
+  /* Debug parameters  */
+  /*******************************/
+  /* is now in general 
+  fprintf( file, "Debug options:\n" );
+
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_VERBOSE_STR,
+                     POMDP_SOLVE_OPTS_Verbose_Str );
+  */
+
+  /*******************************/
+  /* Value Iteration parameters  */
+  /*******************************/
+  fprintf( file, "\nValue Iteration options:\n" );
+
+  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_HISTORY_LENGTH_STR );
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_SAVE_ALL_STR,
+                     Boolean_Str );
+  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_O_STR );
+  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_END_EPSILON_STR );
+  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_START_EPSILON_STR );
+  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_STOP_DELTA_STR );
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_STOP_CRITERIA_STR,
+                     POMDP_SOLVE_OPTS_Stop_Criteria_Str );
+  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_TERMINAL_VALUES_STR );
+  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_DISCOUNT_STR );
+  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_HISTORY_DELTA_STR );
+  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_EPSILON_ADJUST_STR );
+  PO_showUsageEnumType( file,
+                     POMDP_SOLVE_OPTS_ARG_VI_VARIATION_STR,
+                     POMDP_SOLVE_OPTS_Vi_Variation_Str );
+  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_HORIZON_STR );
+  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_MAX_SOLN_SIZE_STR );
 
   /*******************************/
   /* Optimization parameters  */
   /*******************************/
-  fprintf( file, "Optimization options:\n" );
+  fprintf( file, "\nOptimization options:\n" );
 
   fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_EPSILON_STR );
   fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_PRUNE_EPSILON_STR );
@@ -422,43 +460,6 @@ POMDP_SOLVE_OPTS_showUsage( FILE* file, char* exec_name )
                      POMDP_SOLVE_OPTS_ARG_WITNESS_POINTS_STR,
                      Boolean_Str );
 
-  /*******************************/
-  /* Debug parameters  */
-  /*******************************/
-  /* is now in general 
-  fprintf( file, "Debug options:\n" );
-
-  PO_showUsageEnumType( file,
-                     POMDP_SOLVE_OPTS_ARG_VERBOSE_STR,
-                     POMDP_SOLVE_OPTS_Verbose_Str );
-  */
-
-  /*******************************/
-  /* Value Iteration parameters  */
-  /*******************************/
-  fprintf( file, "Value Iteration options:\n" );
-
-  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_HISTORY_LENGTH_STR );
-  PO_showUsageEnumType( file,
-                     POMDP_SOLVE_OPTS_ARG_SAVE_ALL_STR,
-                     Boolean_Str );
-  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_O_STR );
-  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_END_EPSILON_STR );
-  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_START_EPSILON_STR );
-  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_STOP_DELTA_STR );
-  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_POMDP_STR );
-  PO_showUsageEnumType( file,
-                     POMDP_SOLVE_OPTS_ARG_STOP_CRITERIA_STR,
-                     POMDP_SOLVE_OPTS_Stop_Criteria_Str );
-  fprintf( file, "\t%s <string>\n", POMDP_SOLVE_OPTS_ARG_TERMINAL_VALUES_STR );
-  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_DISCOUNT_STR );
-  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_HISTORY_DELTA_STR );
-  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_EPSILON_ADJUST_STR );
-  PO_showUsageEnumType( file,
-                     POMDP_SOLVE_OPTS_ARG_VI_VARIATION_STR,
-                     POMDP_SOLVE_OPTS_Vi_Variation_Str );
-  fprintf( file, "\t%s <int>\n", POMDP_SOLVE_OPTS_ARG_HORIZON_STR );
-  fprintf( file, "\t%s <double>\n", POMDP_SOLVE_OPTS_ARG_MAX_SOLN_SIZE_STR );
 
 }  /* POMDP_SOLVE_OPTS_showUsage */
 

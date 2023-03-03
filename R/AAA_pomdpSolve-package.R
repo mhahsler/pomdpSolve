@@ -3,7 +3,11 @@
 #' @description Installs an updated version of 'pomdp-solve', a program to solve Partially Observable Markov Decision Processes (POMDPs) using a variety of exact and approximate value iteration algorithms. This package only provides the executable and a few reading routines. A convenient R infrastructure to use the solver is provided in the separate package \pkg{pomdp} ([pomdp::pomdp-package]).
 #' 
 #' @section Key functions:
-#' - Find and run the pomdp-solve executable using [find_pomdp_solve()].
+#' - Solve a POMDP file with pomdp-solve using [pomdp_solve()].
+#' - Read and write files for pomdp-solve (see [read_write]).
+#' - Find the pomdp-solve executable using [find_pomdp_solve()].
+#' 
+#' Package pomdp provides more convenient support to
 #' - Define a POMDP using [pomdp::POMDP]
 #' - Solve a POMDP using [pomdp::solve_POMDP()]
 #'

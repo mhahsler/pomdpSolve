@@ -65,6 +65,8 @@
 #' 
 #' Details about the file formats and pomdp-solve can be found in the References section.
 #' 
+#' See [pomdp_solve()] for examples.
+#' 
 #' @param file name of the file to read from or to write to.
 #' @param belief_points a numeric matrix with the number of states columns. Rows represent belief points. 
 #' @param alpha a numeric alpha vector with the length of the number of states.
@@ -84,25 +86,7 @@
 #' @references
 #' Anthony R. Cassandra, pomdp-solve documentation, 
 #'   \url{https://www.pomdp.org/code/index.html}
-#'   
-#' @examples 
-#' # solve a POMDP file that ships with this package in a temporary directory
-#' tmp <- tempdir()
-#' old_dir <- setwd(tmp)
-#' 
-#' file.copy(system.file("tiger.aaai.POMDP", package = "pomdpSolve"), "./tiger.aaai.POMDP")
-#' 
-#' system2(find_pomdp_solve(), args = c("-pomdp", "tiger.aaai.POMDP", "-method", "grid"))
-#' dir()
-#' 
-#' # read the raw policy graph (-0 means infinite horizon solution)
-#' read_pg_file("tiger.aaai-0.pg")
-#' 
-#' # read the raw value function
-#' read_alpha_file("tiger.aaai-0.alpha")
-#' 
-#' # return to the old directory
-#' setwd(old_dir)
+
 #' @importFrom utils read.table
 #' 
 #' @export

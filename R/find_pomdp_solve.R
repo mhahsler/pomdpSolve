@@ -33,6 +33,9 @@
 #' 
 #' # get pomdp-solve options
 #' system2(find_pomdp_solve(), args = "-h")
+#' 
+#' # an example of how to solve a simple POMDP can be found in the man page
+#' # for read_write.
 #' @seealso read_write
 #' @export
 find_pomdp_solve <- function() {

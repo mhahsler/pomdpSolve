@@ -102,25 +102,8 @@ file can be read using \code{read_belief_file()}.
 A matrix with belief points can be written using \code{write_grid_file()}. This file can be used
 
 Details about the file formats and pomdp-solve can be found in the References section.
-}
-\examples{
-# solve a POMDP file that ships with this package in a temporary directory
-tmp <- tempdir()
-old_dir <- setwd(tmp)
 
-file.copy(system.file("tiger.aaai.POMDP", package = "pomdpSolve"), "./tiger.aaai.POMDP")
-
-system2(find_pomdp_solve(), args = c("-pomdp", "tiger.aaai.POMDP", "-method", "grid"))
-dir()
-
-# read the raw policy graph (-0 means infinite horizon solution)
-read_pg_file("tiger.aaai-0.pg")
-
-# read the raw value function
-read_alpha_file("tiger.aaai-0.alpha")
-
-# return to the old directory
-setwd(old_dir)
+See \code{\link[=pomdp_solve]{pomdp_solve()}} for examples.
 }
 \references{
 Anthony R. Cassandra, pomdp-solve documentation,

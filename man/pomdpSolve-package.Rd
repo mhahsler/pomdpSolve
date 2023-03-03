@@ -10,7 +10,13 @@ Installs an updated version of 'pomdp-solve', a program to solve Partially Obser
 \section{Key functions}{
 
 \itemize{
-\item Find and run the pomdp-solve executable using \code{\link[=find_pomdp_solve]{find_pomdp_solve()}}.
+\item Solve a POMDP file with pomdp-solve using \code{\link[=pomdp_solve]{pomdp_solve()}}.
+\item Read and write files for pomdp-solve (see \link{read_write}).
+\item Find the pomdp-solve executable using \code{\link[=find_pomdp_solve]{find_pomdp_solve()}}.
+}
+
+Package pomdp provides more convenient support to
+\itemize{
 \item Define a POMDP using \link[pomdp:POMDP]{pomdp::POMDP}
 \item Solve a POMDP using \code{\link[pomdp:solve_POMDP]{pomdp::solve_POMDP()}}
 }

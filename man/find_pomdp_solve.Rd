@@ -32,6 +32,9 @@ find_pomdp_solve()
 
 # get pomdp-solve options
 system2(find_pomdp_solve(), args = "-h")
+
+# an example of how to solve a simple POMDP can be found in the man page
+# for read_write.
 }
 \references{
 Kaelbling, L.P., Littman, M.L., Cassandra, A.R. (1998).

@@ -490,11 +490,11 @@ showPomdpSolveParams( PomdpSolveParams params )
   fprintf( params->report_file, 
 		 "||   %s    ||\n", params->opts->__exec_name__ );
   fprintf( params->report_file, 
-		 "||     v. %s       ||\n", params->opts->__version__ );
+		 "|| v. %s (R-mod) ||\n", params->opts->__version__ );
   fprintf( params->report_file, 
 		 " \\\\****************//\n" );
-  fprintf( params->report_file, 
-		 "      PID=%d\n", getPid() );
+  //fprintf( params->report_file, 
+  //		 "      PID=%d\n", getPid() );
 
   cfg = POMDP_SOLVE_OPTS_toConfigFile( params->opts );
 

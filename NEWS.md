@@ -1,7 +1,8 @@
-# pomdpSolve 1.0.2-1 (xx/xx/2023)
+# pomdpSolve 1.0.3 (03/02/2023)
 
-* Added some file read functions.
-* cleaned help page for pomdp-spolve
+* Added file read/write functions.
+* Added a bare bones interface.
+* Cleaned help for pomdp-solve.
 
 # pomdpSolve 1.0.2 (12/27/2022)
 

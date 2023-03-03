@@ -83,25 +83,28 @@ When using the enumeration method, there will be times where the set of value fu
 
 The variation of the **incremental pruning algorithm**.
 
-The incremental pruning algorithm has a number of variations. This parameter selects the variation. We do not yet discuss here the nuances of these variations.
+The incremental pruning algorithm has a number of variations. This parameter selects the variation.
 
 ### `fg_type [simplex pairwise search initial (default)]`
 
 **Finite grid method** means to generate belief points.
 
-The finite grid method needs a set of belief points to compute over. There are a number of ways to generate this grid, and this parameter selects the technique to use. We do not yet here discuss the details of each of these.
+The finite grid method needs a set of belief points to compute over. 
+There are a number of ways to generate this grid, and this parameter selects the technique to use.
 
 ### `fg_points <int>` (default: 10000)
 
 Maximal number of belief points to use in **finite grid**.
 
-The finite grid method needs a set of belief points to compute over. There are a number of ways to generate this grid, and this parameter selects the maximum number of points that should be generated during this process.
+The finite grid method needs a set of belief points to compute over. There are a number of ways to generate this grid, 
+and this parameter selects the maximum number of points that should be generated during this process.
 
 ### `fg_save [true or false (default)]`
 
 Whether to save the points used in **finite grid**.
 
-The finite grid method needs a set of belief points to compute over. This parameter will turn on and off the saving of these belief points to an external file.
+The finite grid method needs a set of belief points to compute over. This parameter can be used to save the used points
+in a filed ending in `.belief`.
 
 ### `fg_purge [none, domonly, normal_prune (default), epsilon_prune]`
 
@@ -139,9 +142,20 @@ At the end of each epoch of value iteration, a check is done to see whether the 
 
 ### `terminal_values <filename>`
 
-Sets the terminal value function (starting point).
+Sets the terminal value function for value iteration.
 
-Value iteration assumes that at the end of the lifetime of the decision maker that no more values will be accrued. This corresponds to a terminal value function of all zeroes. This is essentially the default starting point for the program. However, with this parameter, you can set a different terminal value function, which serves as the seed or initial starting point for value iteration. Effectively, this allows you to take the output of one value iteration run and send it as input to the next. The file format for this input file is identical to the output file format of this program (the ".alpha" file).
+Since value iteration starts solving in reverse order, a terminal value function can be used specify
+the start point. If no terminal values are specified, then the start point is a value function where 
+the terminal value for states is set to zero.
+
+The file format for the value function input file is identical to the output file format 
+of pomdp-solve for `.alpha` files.
+
+Use cases:
+
+* Specifying terminal values for states after the last epoch (see horizon) in finite time horizon problems. Here the 
+  value function consists of a single alpha vector specifying the terminal reward for each state.
+* Continue a previous value iteration run with the returned alpha vectors as the input. 
 
 ### `discount <double>`
 

@@ -24,23 +24,26 @@ This function provides a bare bones interface to run pomdp-solve on a POMDP
 file. The results can be read with the function provides in \link{read_write}.
 }
 \details{
+Calling \code{solve_pomdp()} first cleans results from previous runs and then executes pomdp-solve with the specified options.
+
 The options are specified in \code{options} as a list with entries of the form \verb{<option> = <value>}.
 \code{pomdp_solve_help()} displays the available options. Note that the leading dash is not used on the option name. For example:
 \code{list(method = "grid", epsilon = 0.1)} sets the method option to grid and epsilon to 0.1.
 Here is a slightly more \href{https://mhahsler.github.io/pomdpSolve/pomdp-solve_manual}{detailed description of pomdp-solve's options.}
 }
 \examples{
-# display available arguments
+# display available options
 pomdp_solve_help()
 
 # solve a POMDP file that ships with this package in a temporary directory
-tmp <- tempdir()
-old_dir <- setwd(tmp)
+old_wd <- setwd(tempdir())
 
 file.copy(system.file("tiger.aaai.POMDP", package = "pomdpSolve"), "./tiger.aaai.POMDP")
 
-pomdp_solve("tiger.aaai.POMDP", options = list(method = "grid"))
+# Example 1: run solver to completion
+pomdp_solve("tiger.aaai.POMDP", options = list(method = "incprune"))
 dir()
+# you can inspect the files with file.show()
 
 # read the raw policy graph (-0 means infinite horizon solution)
 read_pg_file("tiger.aaai-0.pg")
@@ -48,8 +51,22 @@ read_pg_file("tiger.aaai-0.pg")
 # read the raw value function
 read_alpha_file("tiger.aaai-0.alpha")
 
+# Example 2: use method finite grid (point-based algorithm) and save the used belief points
+pomdp_solve("tiger.aaai.POMDP", options = list(method = "grid", fg_save = TRUE))
+dir()
+
+read_belief_file("tiger.aaai-0.belief")
+
+# Example 3: Stop value iteration after 50 epochs and then continue with a second call
+pomdp_solve("tiger.aaai.POMDP", options = list(method = "incprune", horizon = 50))
+alpha <- read_alpha_file("tiger.aaai-0.alpha")
+
+write_terminal_values("terminal.alpha", alpha)
+pomdp_solve("tiger.aaai.POMDP", options = list(method = "incprune", 
+  terminal_values = "terminal.alpha"))
+
 # return to the old directory
-setwd(old_dir)
+setwd(old_wd)
 }
 \references{
 Anthony R. Cassandra, pomdp-solve documentation,

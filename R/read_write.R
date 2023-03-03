@@ -28,6 +28,8 @@
 #' function. Note that the length of the lists needs to be equal to the 
 #' number of states in the POMDP.
 #' 
+#' `read_alpha_file()` reads the V components from the file and returns a matrix.
+#' 
 #' **Policy Graph**
 #' 
 #' The policy graph is returned as a file with the extension `.pg`.
@@ -40,7 +42,7 @@
 #' }
 #' 
 #' Here `N` is a node ID giving the node a unique name, numbered sequentially 
-#' and lining up sequentially with the value function vectors in the 
+#' and lining up with the value function vectors in the 
 #' corresponding output `.alpha` file above.
 #' 
 #' The `A` is the action number defined for this node; it is an integer referring 
@@ -51,6 +53,8 @@
 #' the list will be the index of the node that follows this one when the 
 #' observation received is `n`.
 #'
+#' `read_pg_file()` returns a data.frame with the nodes in the policy graph as rows. 
+#' 
 #' **Terminal Values**
 #' 
 #' Terminal values can be specified as a single alpha vector.
@@ -97,7 +101,11 @@ read_alpha_file <- function(file) {
   alpha <-
     do.call(rbind, lapply(alpha, function(a)
       as.numeric(strsplit(a, " ")[[1]])))
+  
+  colnames(alpha) <- paste0("V", seq_len(ncol(alpha)))
+  
   alpha
+  
 }
 
 #' @rdname read_write
@@ -107,23 +115,21 @@ read_pg_file <- function(file) {
     file,
     header = FALSE,
     sep = "",
-    colClasses = "numeric",
+    colClasses = "integer",
     na.strings = c("-", "X")
   )
-  pg <- pg + 1 #index has to start from 1 not 0
+  pg <- pg + 1L # index has to start from 1 not 0
   
-  # renaming the columns and actions
-  #colnames(pg) <-
-  #  c("node", "action", as.character(model$observations))
-  #pg[, 2] <- factor(pg[, 2], levels = seq(length(model$actions)), labels = model$actions)
+  colnames(pg) <- c("N", "A", paste0("Z", seq_len(ncol(pg) - 2L)))
+  
   pg
 }
 
 #' @rdname read_write
 #' @export
 read_belief_file <- function(file) {
-  if (length(grep(file, '-0\\.belief')) != 1L)
-    stop("belief file needs to be <model file without .pomdp>-0.belief")
+  if (!grepl("-0\\.belief", file))
+    stop("belief file needs to end in -0.belief")
   
   if (!file.exists(file))
     return(NULL)
@@ -146,8 +152,6 @@ write_grid_file <- function(file, belief_points, digits = 7) {
 #' @rdname read_write
 #' @export
 write_terminal_values <- function(file, alpha, digits = 7) {
-  if (length(grep(file, '_terminal_values.alpha')) != 1L)
-    stop("terminal values file needs to be <model file without .pomdp>_terminal_values.alpha")
     
   if (!is.matrix(alpha))
     alpha <- rbind(alpha)

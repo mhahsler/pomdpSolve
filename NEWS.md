@@ -1,4 +1,4 @@
-# pomdpSolve 1.0.3 (03/02/2023)
+# pomdpSolve 1.0.3 (03/03/2023)
 
 * Added file read/write functions.
 * Added a bare bones interface.

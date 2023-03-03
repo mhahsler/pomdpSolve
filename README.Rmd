@@ -17,6 +17,29 @@ A convenient interface is provided in package [pomdp](https://github.com/mhahsle
 pkg_install(pkg)
 ```
 
+## Usage
+
+Solve a POMDP file that ships with this package in a temporary directory and read the solution.
+```{r }
+library(pomdpSolve)
+
+old_wd <- setwd(tempdir())
+file.copy(system.file("tiger.aaai.POMDP", package = "pomdpSolve"), "./tiger.aaai.POMDP")
+
+pomdp_solve("tiger.aaai.POMDP", options = list(method = "grid"), verbose = FALSE)
+dir()
+
+read_alpha_file("tiger.aaai-0.alpha")
+read_pg_file("tiger.aaai-0.pg")
+
+setwd(old_wd)
+```
+
+The value function is defined by a set of alpha vectors represented as $V$ components rows in a matrix. Each alpha vector corresponds to 
+a node with the same row number in the policy graph. The policy graph represents the policy in the form of a data.frame with one row for each node. Nodes have a node id $N$, the action $A$ defined by the policy and then for each observation $Z$ the id (row) of the policy graph node to transition to.
+
+A detailed description of the available solver options can be found [here](https://mhahsler.github.io/pomdpSolve/pomdp-solve_manual).
+
 ## How to Cite this Package
 ```{r echo=FALSE, results = 'asis'}
 citation(pkg)

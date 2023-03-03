@@ -1589,8 +1589,7 @@ algorithm.</p>
 <p>The variation of the <strong>incremental pruning
 algorithm</strong>.</p>
 <p>The incremental pruning algorithm has a number of variations. This
-parameter selects the variation. We do not yet discuss here the nuances
-of these variations.</p>
+parameter selects the variation.</p>
 </div>
 <div id="fg_type-simplex-pairwise-search-initial-default" class="section level3">
 <h3><code>fg_type [simplex pairwise search initial (default)]</code></h3>
@@ -1598,8 +1597,7 @@ of these variations.</p>
 points.</p>
 <p>The finite grid method needs a set of belief points to compute over.
 There are a number of ways to generate this grid, and this parameter
-selects the technique to use. We do not yet here discuss the details of
-each of these.</p>
+selects the technique to use.</p>
 </div>
 <div id="fg_points-int-default-10000" class="section level3">
 <h3><code>fg_points &lt;int&gt;</code> (default: 10000)</h3>
@@ -1614,8 +1612,8 @@ this process.</p>
 <h3><code>fg_save [true or false (default)]</code></h3>
 <p>Whether to save the points used in <strong>finite grid</strong>.</p>
 <p>The finite grid method needs a set of belief points to compute over.
-This parameter will turn on and off the saving of these belief points to
-an external file.</p>
+This parameter can be used to save the used points in a filed ending in
+<code>.belief</code>.</p>
 </div>
 <div id="fg_purge-none-domonly-normal_prune-default-epsilon_prune" class="section level3">
 <h3><code>fg_purge [none, domonly, normal_prune (default), epsilon_prune]</code></h3>
@@ -1664,16 +1662,22 @@ time.</p>
 </div>
 <div id="terminal_values-filename" class="section level3">
 <h3><code>terminal_values &lt;filename&gt;</code></h3>
-<p>Sets the terminal value function (starting point).</p>
-<p>Value iteration assumes that at the end of the lifetime of the
-decision maker that no more values will be accrued. This corresponds to
-a terminal value function of all zeroes. This is essentially the default
-starting point for the program. However, with this parameter, you can
-set a different terminal value function, which serves as the seed or
-initial starting point for value iteration. Effectively, this allows you
-to take the output of one value iteration run and send it as input to
-the next. The file format for this input file is identical to the output
-file format of this program (the “.alpha” file).</p>
+<p>Sets the terminal value function for value iteration.</p>
+<p>Since value iteration starts solving in reverse order, a terminal
+value function can be used specify the start point. If no terminal
+values are specified, then the start point is a value function where the
+terminal value for states is set to zero.</p>
+<p>The file format for the value function input file is identical to the
+output file format of pomdp-solve for <code>.alpha</code> files.</p>
+<p>Use cases:</p>
+<ul>
+<li>Specifying terminal values for states after the last epoch (see
+horizon) in finite time horizon problems. Here the value function
+consists of a single alpha vector specifying the terminal reward for
+each state.</li>
+<li>Continue a previous value iteration run with the returned alpha
+vectors as the input.</li>
+</ul>
 </div>
 <div id="discount-double" class="section level3">
 <h3><code>discount &lt;double&gt;</code></h3>

@@ -67,6 +67,8 @@ representing one facet of the piecewise linear and convex (PWLC) value
 function. Note that the length of the lists needs to be equal to the
 number of states in the POMDP.
 
+\code{read_alpha_file()} reads the V components from the file and returns a matrix.
+
 \strong{Policy Graph}
 
 The policy graph is returned as a file with the extension \code{.pg}.
@@ -79,7 +81,7 @@ N A  Z1 Z2 Z3 ...
 }
 
 Here \code{N} is a node ID giving the node a unique name, numbered sequentially
-and lining up sequentially with the value function vectors in the
+and lining up with the value function vectors in the
 corresponding output \code{.alpha} file above.
 
 The \code{A} is the action number defined for this node; it is an integer referring
@@ -89,6 +91,8 @@ list will have a length equal to the number of observations in the POMDP.
 This list specifies the transitions in the policy graph. The nth number in
 the list will be the index of the node that follows this one when the
 observation received is \code{n}.
+
+\code{read_pg_file()} returns a data.frame with the nodes in the policy graph as rows.
 
 \strong{Terminal Values}
 

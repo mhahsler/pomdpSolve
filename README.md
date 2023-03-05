@@ -75,11 +75,11 @@ setwd(old_wd)
 ```
 
 The value function is defined by a set of alpha vectors represented as
-$V$ components rows in a matrix. Each alpha vector corresponds to a node
-with the same row number in the policy graph. The policy graph
+rows in a matrix with $V$ components. Each alpha vector corresponds to a
+node with the same row number in the policy graph. The policy graph
 represents the policy in the form of a data.frame with one row for each
 node. Nodes have a node id $N$, the action $A$ defined by the policy and
-then for each observation $Z$ the id (row) of the policy graph node to
+then for each observation $Z_i$ the id (row) of the policy graph node to
 transition to.
 
 A detailed description of the available solver options can be found

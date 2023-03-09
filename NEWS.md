@@ -1,4 +1,4 @@
-# pomdpSolve 1.0.3-1 (xx/xx/2023)
+# pomdpSolve 1.0.4 (xx/xx/2023)
 * fixed bug in write_grid_file().
 
 

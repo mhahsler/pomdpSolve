@@ -1,6 +1,6 @@
 Package: pomdpSolve
 Title: Interface to 'pomdp-solve' for Partially Observable Markov Decision Processes
-Version: 1.0.3-1
+Version: 1.0.4
 Date: 2023-xx-xx
 Authors@R: 
       c(person(given = "Michael",

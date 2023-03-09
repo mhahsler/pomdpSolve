@@ -141,7 +141,7 @@ read_belief_file <- function(file) {
 #' @rdname read_write
 #' @export
 write_grid_file <- function(file, belief_points, digits = 7) {
-  if (length(grep(file, '\\.grid')) != 1L)
+  if (!grepl('\\.grid', file))
     stop("terminal values file needs to be <model file without .pomdp>.grid")
   if (!is.matrix(belief_points))
     belief_points <- rbind(belief_points)

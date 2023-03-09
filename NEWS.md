@@ -1,3 +1,7 @@
+# pomdpSolve 1.0.3-1 (xx/xx/2023)
+* fixed bug in write_grid_file().
+
+
 # pomdpSolve 1.0.3 (03/03/2023)
 
 * Added file read/write functions.

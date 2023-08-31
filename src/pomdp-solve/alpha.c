@@ -1112,7 +1112,7 @@ displayAlphaList( FILE *file, AlphaList list )
       fprintf( file, " s" );
     fprintf ( file, "> " );
 
-    displayAlpha(file, list->alpha );
+    //displayAlpha(file, list->alpha );
     fprintf ( file, "\n" );
 
     list = list->next;

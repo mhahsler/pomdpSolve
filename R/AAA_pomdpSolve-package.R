@@ -13,5 +13,8 @@
 #'
 #' @author Michael Hahsler
 #' @docType package
+#' @references 
+#' Anthony R. Cassandra, pomdp-solve source code GitHub repository,
+#' \url{https://github.com/cassandra/pomdp-solve}
 #' @name pomdpSolve-package
 NULL

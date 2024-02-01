@@ -111,7 +111,7 @@ See \code{\link[=pomdp_solve]{pomdp_solve()}} for examples.
 }
 \references{
 Anthony R. Cassandra, pomdp-solve documentation,
-\url{https://www.pomdp.org/code/index.html}
+\url{https://www.pomdp.org/code/}
 }
 \seealso{
 find_pomdp_solve

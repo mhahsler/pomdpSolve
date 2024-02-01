@@ -43,7 +43,10 @@ Planning and acting in partially observable stochastic domains.
 \doi{10.1016/S0004-3702(98)00023-X}
 
 Anthony R. Cassandra, pomdp-solve documentation,
-\url{https://www.pomdp.org/code/index.html}
+\url{https://www.pomdp.org/code/}
+
+Anthony R. Cassandra, pomdp-solve source code GitHub repository,
+\url{https://github.com/cassandra/pomdp-solve}
 }
 \seealso{
 read_write

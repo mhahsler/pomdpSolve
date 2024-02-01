@@ -25,7 +25,10 @@
 #'   \doi{10.1016/S0004-3702(98)00023-X}
 #' 
 #' Anthony R. Cassandra, pomdp-solve documentation, 
-#'   \url{https://www.pomdp.org/code/index.html}
+#'   \url{https://www.pomdp.org/code/}
+#'   
+#' Anthony R. Cassandra, pomdp-solve source code GitHub repository,
+#' \url{https://github.com/cassandra/pomdp-solve}
 #'   
 #' @examples 
 #' # find the location of the pomdp-solve executable

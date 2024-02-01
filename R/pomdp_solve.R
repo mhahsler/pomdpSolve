@@ -19,8 +19,12 @@
 #'
 #' @seealso find_pomdp_solve read_write
 #'
-#' @references Anthony R. Cassandra, pomdp-solve documentation,
-#' \url{https://www.pomdp.org/code/index.html}
+#' @references 
+#' Anthony R. Cassandra, pomdp-solve code and documentation,
+#' \url{https://www.pomdp.org/code/}
+#' 
+#' Anthony R. Cassandra, pomdp-solve GitHub repository,
+#' \url{https://github.com/cassandra/pomdp-solve}
 #'
 #' @examples
 #' # display available options

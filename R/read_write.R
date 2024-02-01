@@ -89,7 +89,7 @@
 #' 
 #' @references
 #' Anthony R. Cassandra, pomdp-solve documentation, 
-#'   \url{https://www.pomdp.org/code/index.html}
+#'   \url{https://www.pomdp.org/code/}
 
 #' @importFrom utils read.table
 #' 

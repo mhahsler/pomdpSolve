@@ -69,8 +69,11 @@ pomdp_solve("tiger.aaai.POMDP", options = list(method = "incprune",
 setwd(old_wd)
 }
 \references{
-Anthony R. Cassandra, pomdp-solve documentation,
-\url{https://www.pomdp.org/code/index.html}
+Anthony R. Cassandra, pomdp-solve code and documentation,
+\url{https://www.pomdp.org/code/}
+
+Anthony R. Cassandra, pomdp-solve GitHub repository,
+\url{https://github.com/cassandra/pomdp-solve}
 }
 \seealso{
 find_pomdp_solve read_write

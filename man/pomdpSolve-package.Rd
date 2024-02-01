@@ -22,6 +22,10 @@ Package pomdp provides more convenient support to
 }
 }
 
+\references{
+Anthony R. Cassandra, pomdp-solve source code GitHub repository,
+\url{https://github.com/cassandra/pomdp-solve}
+}
 \author{
 Michael Hahsler
 }

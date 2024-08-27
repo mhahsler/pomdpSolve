@@ -1,12 +1,12 @@
 
 # <img src="man/figures/logo.svg" align="right" height="139" /> R package pomdpSolve - Interface to ‘pomdp-solve’ for Partially Observable Markov Decision Processes
 
-[![CRAN
-version](http://www.r-pkg.org/badges/version/pomdpSolve)](https://CRAN.R-project.org/package=pomdpSolve)
-[![stream r-universe
+[![r-universe
 status](https://mhahsler.r-universe.dev/badges/pomdpSolve)](https://mhahsler.r-universe.dev/pomdpSolve)
+[![Package on
+CRAN](https://www.r-pkg.org/badges/version/pomdpSolve)](https://CRAN.R-project.org/package=pomdpSolve)
 [![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/pomdpSolve)](https://CRAN.R-project.org/package=pomdpSolve)
+downloads](https://cranlogs.r-pkg.org/badges/pomdpSolve)](https://CRAN.R-project.org/package=pomdpSolve)
 
 Provides [pomdp-solve](http://www.pomdp.org/code/) (Cassandra, 2015) to
 solve POMDPs using a variety of algorithms. A convenient interface is
@@ -24,7 +24,9 @@ install.packages("pomdpSolve")
 [r-universe.](https://mhahsler.r-universe.dev/pomdpSolve)
 
 ``` r
-install.packages("pomdpSolve", repos = "https://mhahsler.r-universe.dev")
+install.packages("pomdpSolve",
+    repos = c("https://mhahsler.r-universe.dev",
+              "https://cloud.r-project.org/"))
 ```
 
 ## Usage
@@ -91,14 +93,14 @@ To cite package ‘pomdpSolve’ in publications use:
 
 Hahsler M, Cassandra AR (2023). *pomdpSolve: Interface to ‘pomdp-solve’
 for Partially Observable Markov Decision Processes*. R package version
-1.0.3, <https://github.com/mhahsler/pomdpSolve>.
+1.0.4, <https://CRAN.R-project.org/package=pomdpSolve>.
 
 A BibTeX entry for LaTeX users is
 
 @Manual{, title = {pomdpSolve: Interface to ‘pomdp-solve’ for Partially
 Observable Markov Decision Processes}, author = {Michael Hahsler and
-Anthony R. Cassandra}, year = {2023}, note = {R package version 1.0.3},
-url = {<https://github.com/mhahsler/pomdpSolve>}, }
+Anthony R. Cassandra}, year = {2023}, note = {R package version 1.0.4},
+url = {<https://CRAN.R-project.org/package=pomdpSolve>}, }
 
 ## References
 

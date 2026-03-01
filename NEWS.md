@@ -1,6 +1,11 @@
-# pomdpSolve 1.0.4-1 (xx/xx/2024)
+# pomdpSolve 1.0.6 (02/27/2026)
+* Installation now reports used C compiler in the log for CRAN.
+
+# pomdpSolve 1.0.5 (04/19/2025)
+* updated citation.
 
 # pomdpSolve 1.0.4 (08/31/2023)
+
 * fixed bug in write_grid_file().
 
 # pomdpSolve 1.0.3 (03/03/2023)

@@ -2,6 +2,7 @@
 % Please edit documentation in R/AAA_pomdpSolve-package.R
 \docType{package}
 \name{pomdpSolve-package}
+\alias{pomdpSolve}
 \alias{pomdpSolve-package}
 \title{pomdpSolve: Interface to 'pomdp-solve' for Partially Observable Markov Decision Processes}
 \description{
@@ -25,6 +26,14 @@ Package pomdp provides more convenient support to
 \references{
 Anthony R. Cassandra, pomdp-solve source code GitHub repository,
 \url{https://github.com/cassandra/pomdp-solve}
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/mhahsler/pomdpSolve}
+  \item Report bugs at \url{https://github.com/mhahsler/pomdpSolve/issues}
+}
+
 }
 \author{
 Michael Hahsler

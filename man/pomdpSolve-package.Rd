@@ -36,5 +36,13 @@ Useful links:
 
 }
 \author{
-Michael Hahsler
+\strong{Maintainer}: Michael Hahsler \email{mhahsler@lyle.smu.edu} (\href{https://orcid.org/0000-0003-2716-1405}{ORCID}) [copyright holder]
+
+Authors:
+\itemize{
+  \item Michael Hahsler \email{mhahsler@lyle.smu.edu} (\href{https://orcid.org/0000-0003-2716-1405}{ORCID}) [copyright holder]
+  \item Anthony R. Cassandra [copyright holder]
 }
+
+}
+\keyword{internal}

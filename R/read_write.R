@@ -128,7 +128,7 @@ read_pg_file <- function(file) {
 #' @rdname read_write
 #' @export
 read_belief_file <- function(file) {
-  if (!grepl("-0\\.belief", file))
+  if (!grepl("-0\\.belief$", file))
     stop("belief file needs to end in -0.belief")
   
   if (!file.exists(file))
@@ -141,7 +141,7 @@ read_belief_file <- function(file) {
 #' @rdname read_write
 #' @export
 write_grid_file <- function(file, belief_points, digits = 7) {
-  if (!grepl('\\.grid', file))
+  if (!grepl('\\.grid$', file))
     stop("terminal values file needs to be <model file without .pomdp>.grid")
   if (!is.matrix(belief_points))
     belief_points <- rbind(belief_points)
@@ -191,5 +191,4 @@ write_terminal_values <- function(file, alpha, digits = 7) {
   } else
     stop("formating not implemented for ", class(x), " in field ", debug)
 }
-
 

@@ -11,10 +11,8 @@
 #' - Define a POMDP using [pomdp::POMDP]
 #' - Solve a POMDP using [pomdp::solve_POMDP()]
 #'
-#' @author Michael Hahsler
-#' @docType package
 #' @references 
 #' Anthony R. Cassandra, pomdp-solve source code GitHub repository,
 #' \url{https://github.com/cassandra/pomdp-solve}
-#' @name pomdpSolve-package
-NULL
+#' @keywords internal
+"_PACKAGE"

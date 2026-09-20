@@ -1,9 +1,9 @@
 #' Solving a POMDP with 'pomdp-solve'
 #'
 #' This function provides a bare bones interface to run pomdp-solve on a POMDP
-#' file. The results can be read with the function provides in [read_write].
+#' file. The results can be read with the functions provided in [read_write].
 #' 
-#' Calling `solve_pomdp()` first cleans results from previous runs and then executes pomdp-solve with the specified options.
+#' Calling `pomdp_solve()` first cleans results from previous runs and then executes pomdp-solve with the specified options.
 #' 
 #' The options are specified in `options` as a list with entries of the form `<option> = <value>`. 
 #' `pomdp_solve_help()` displays the available options. Note that the leading dash is not used on the option name. For example:
@@ -15,7 +15,8 @@
 #' @param options a list with options for pomdp-solve. 
 #' @param verbose logical; show the program text output?
 #'
-#' @returns nothing
+#' @returns An integer exit status returned by [system2()]: `0` indicates
+#'   success, and a nonzero value indicates an error.
 #'
 #' @seealso find_pomdp_solve read_write
 #'
@@ -69,12 +70,13 @@ pomdp_solve <- function(pomdp, options = list(), verbose = TRUE) {
   options["pomdp"] <- pomdp
   
   # preclean
-  if(!is.null(options[["o"]]))
-    o <- options["o"]
+  if (!is.null(options[["o"]]))
+    output_prefix <- options[["o"]]
   else
-    o <- sub('\\.pomdp$', '', pomdp, ignore.case = TRUE) 
+    output_prefix <- sub('\\.pomdp$', '', pomdp, ignore.case = TRUE)
+  output_prefix <- as.character(output_prefix)
   
-  file.remove(list.files(pattern = paste0("^", o, "-0")))
+  .clean_solver_output(output_prefix)
   
   # prepare options
   options <- unlist(options)
@@ -90,9 +92,26 @@ pomdp_solve <- function(pomdp, options = list(), verbose = TRUE) {
   system2(find_pomdp_solve(), args = options, stdout = if(verbose) "" else FALSE, stderr = if(verbose) "" else FALSE)
 }
 
+.clean_solver_output <- function(output_prefix) {
+  output_dir <- dirname(output_prefix)
+  if (!dir.exists(output_dir))
+    return(invisible(character()))
+
+  output_stem <- paste0(basename(output_prefix), "-0")
+  files <- list.files(output_dir, all.files = TRUE, full.names = TRUE)
+  files <- files[
+    startsWith(basename(files), output_stem) &
+      !file.info(files)$isdir
+  ]
+
+  if (length(files) > 0L)
+    file.remove(files)
+
+  invisible(files)
+}
+
 #' @rdname pomdp_solve
 #' @export
 pomdp_solve_help <- function() {
   system2(find_pomdp_solve(), args = "-h")
 }
-

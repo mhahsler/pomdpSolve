@@ -39,6 +39,14 @@ test_that("belief files are validated and read", {
     fixed = TRUE
   )
 
+  misleading_file <- paste0(missing_file, ".backup")
+  writeLines("0.5 0.5", misleading_file)
+  expect_error(
+    read_belief_file(misleading_file),
+    "needs to end in -0.belief",
+    fixed = TRUE
+  )
+
   writeLines(c("0.25 0.75", "0.6 0.4"), missing_file)
   expect_equal(
     unname(read_belief_file(missing_file)),
@@ -62,6 +70,14 @@ test_that("grid files use fixed-width numeric formatting", {
 
   expect_error(
     write_grid_file(withr::local_tempfile(), belief_points),
+    "needs to be <model file without .pomdp>.grid",
+    fixed = TRUE
+  )
+  expect_error(
+    write_grid_file(
+      withr::local_tempfile(fileext = ".grid.backup"),
+      belief_points
+    ),
     "needs to be <model file without .pomdp>.grid",
     fixed = TRUE
   )

@@ -28,5 +28,5 @@ Copyright: pomdp-solve is Copyright (C) Anthony R. Cassandra;
   LASPack is Copyright (C) Tomas Skalicky; 
   lp-solve is Copyright (C) Michel Berkelaar, Kjell Eikland, Peter Notebaert; 
   all other code is Copyright (C) Michael Hahsler.
-RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0

@@ -14,6 +14,22 @@ test_that("the installed solver executable can be found", {
   expect_match(basename(executable), "^pomdp-solve(\\.exe)?$")
 })
 
+test_that("old solver output is matched as a literal prefix", {
+  output_dir <- withr::local_tempdir()
+  output_prefix <- file.path(output_dir, "model.output")
+  remove <- paste0(output_prefix, "-0", c(".alpha", ".pg", ".belief"))
+  keep <- c(
+    file.path(output_dir, "modelXoutput-0.alpha"),
+    paste0(output_prefix, "-1.alpha")
+  )
+  invisible(file.create(c(remove, keep)))
+
+  expect_invisible(.clean_solver_output(output_prefix))
+
+  expect_false(any(file.exists(remove)))
+  expect_true(all(file.exists(keep)))
+})
+
 test_that("the bundled tiger model can be solved", {
   installed_executable <- system.file(
     "bin",

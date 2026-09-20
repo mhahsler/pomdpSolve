@@ -1,5 +1,6 @@
 # pomdpSolve 1.0.6.1 (Unreleased)
-* Added a `testthat` edition 3 test suite covering file I/O and the bundled solver.
+* Added tests.
+* Improved filename validation and cleanup.
 
 # pomdpSolve 1.0.6 (02/27/2026)
 * Installation now reports the C compiler used in the CRAN log.

@@ -13,13 +13,18 @@ Provides [pomdp-solve](http://www.pomdp.org/code/) (Cassandra, 2015) to solve PO
 a variety of algorithms.
 A convenient interface is provided in package [pomdp](https://github.com/mhahsler/pomdp). 
 
+
+```{r echo=FALSE, results = 'asis'}
+pkg_citation(pkg, 2)
+```
+
 ```{r echo=FALSE, results = 'asis'}
 pkg_install(pkg)
 ```
 
 ## Usage
 
-Solve a POMDP file that ships with this package in a temporary directory and read the solution.
+  Solve a POMDP file that ships with this package in a temporary directory and read the solution.
 ```{r }
 library(pomdpSolve)
 
@@ -39,11 +44,6 @@ The value function is defined by a set of alpha vectors represented as rows in a
 a node with the same row number in the policy graph. The policy graph represents the policy in the form of a data.frame with one row for each node. Nodes have a node id $N$, the action $A$ defined by the policy and then for each observation $Z_i$ the id (row) of the policy graph node to transition to.
 
 A detailed description of the available solver options can be found [here](https://mhahsler.github.io/pomdpSolve/pomdp-solve_manual).
-
-## How to Cite this Package
-```{r echo=FALSE, results = 'asis'}
-citation(pkg)
-```
 
 ## References
 

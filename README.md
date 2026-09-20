@@ -1,16 +1,37 @@
 
 # <img src="man/figures/logo.svg" align="right" height="139" /> R package pomdpSolve - Interface to ‘pomdp-solve’ for Partially Observable Markov Decision Processes
 
-[![r-universe
-status](https://mhahsler.r-universe.dev/badges/pomdpSolve)](https://mhahsler.r-universe.dev/pomdpSolve)
 [![Package on
 CRAN](https://www.r-pkg.org/badges/version/pomdpSolve)](https://CRAN.R-project.org/package=pomdpSolve)
 [![CRAN RStudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/pomdpSolve)](https://CRAN.R-project.org/package=pomdpSolve)
+![License](https://img.shields.io/cran/l/pomdpSolve) [![r-universe
+status](https://mhahsler.r-universe.dev/badges/pomdpSolve)](https://mhahsler.r-universe.dev/pomdpSolve)
+
+**Maintainer:** [Michael Hahsler](https://michael.hahsler.net)
 
 Provides [pomdp-solve](http://www.pomdp.org/code/) (Cassandra, 2015) to
 solve POMDPs using a variety of algorithms. A convenient interface is
 provided in package [pomdp](https://github.com/mhahsler/pomdp).
+
+To cite package ‘pomdpSolve’ in publications use:
+
+> Hahsler M, Cassandra AR (2025). “Pomdp: A computational infrastructure
+> for partially observable Markov decision processes.” *The R Journal*,
+> *16*(2), 1-18. ISSN 2073-4859. <doi:10.32614/RJ-2024-021>
+> <https://doi.org/10.32614/RJ-2024-021>.
+
+    @Article{,
+      title = {Pomdp: A computational infrastructure for partially observable Markov decision processes},
+      author = {Michael Hahsler and Anthony R. Cassandra},
+      year = {2025},
+      journal = {The R Journal},
+      volume = {16},
+      number = {2},
+      pages = {1--18},
+      doi = {10.32614/RJ-2024-021},
+      issn = {2073-4859},
+    }
 
 ## Installation
 
@@ -86,21 +107,6 @@ transition to.
 
 A detailed description of the available solver options can be found
 [here](https://mhahsler.github.io/pomdpSolve/pomdp-solve_manual).
-
-## How to Cite this Package
-
-To cite package ‘pomdpSolve’ in publications use:
-
-Hahsler M, Cassandra AR (2023). *pomdpSolve: Interface to ‘pomdp-solve’
-for Partially Observable Markov Decision Processes*. R package version
-1.0.4, <https://CRAN.R-project.org/package=pomdpSolve>.
-
-A BibTeX entry for LaTeX users is
-
-@Manual{, title = {pomdpSolve: Interface to ‘pomdp-solve’ for Partially
-Observable Markov Decision Processes}, author = {Michael Hahsler and
-Anthony R. Cassandra}, year = {2023}, note = {R package version 1.0.4},
-url = {<https://CRAN.R-project.org/package=pomdpSolve>}, }
 
 ## References
 

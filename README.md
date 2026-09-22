@@ -1,3 +1,11 @@
+---
+output: 
+  github_document:
+    preserve_yaml: true
+  theme: slate
+
+---
+
 
 # <img src="man/figures/logo.svg" align="right" height="139" /> R package pomdpSolve - Interface to ‘pomdp-solve’ for Partially Observable Markov Decision Processes
 

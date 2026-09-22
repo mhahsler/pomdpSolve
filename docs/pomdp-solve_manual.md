@@ -11,9 +11,10 @@ output:
   pdf_document:
     toc: yes
     toc_depth: '2'
+theme: default
 ---
 
-# Introduction 
+# pomdp-solve Options Available in the R package pomdpSolve
 
 The R package [pomdpSolve](https://github.com/mhahsler/pomdpSolve) installs a modified version of the C program pomdp-solve v5.4 by Antony R. Cassandra. This document contains a short description of the command line options of the program and how they can be used from R.
 

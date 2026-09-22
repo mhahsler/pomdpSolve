@@ -12,7 +12,7 @@ status](https://mhahsler.r-universe.dev/badges/pomdpSolve)](https://mhahsler.r-u
 
 Provides [pomdp-solve](http://www.pomdp.org/code/) (Cassandra, 2015) to
 solve POMDPs using a variety of algorithms. A convenient interface is
-provided in package [pomdp](https://github.com/mhahsler/pomdp).
+provided in package [pomdp](https://mhahsler.github.io/pomdp).
 
 To cite package ‘pomdpSolve’ in publications use:
 

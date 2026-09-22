@@ -1,4 +1,4 @@
-# pomdpSolve 1.0.6.1 (Unreleased)
+# pomdpSolve 1.0.7 (09/22/2026)
 * Added tests.
 * Improved filename validation and cleanup.
 

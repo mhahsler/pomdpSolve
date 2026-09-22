@@ -12,7 +12,7 @@ status](https://mhahsler.r-universe.dev/badges/pomdpSolve)](https://mhahsler.r-u
 
 Provides [pomdp-solve](http://www.pomdp.org/code/) (Cassandra, 2015) to
 solve POMDPs using a variety of algorithms. A convenient interface is
-provided in package [pomdp](https://mhahsler.github.io/pomdp).
+provided in package [pomdp](https://michael.hahsler.net/pomdp/).
 
 To cite package ‘pomdpSolve’ in publications use:
 
@@ -106,7 +106,7 @@ then for each observation $Z_i$ the id (row) of the policy graph node to
 transition to.
 
 A detailed description of the available solver options can be found
-[here](https://mhahsler.github.io/pomdpSolve/pomdp-solve_manual).
+[here](https://michael.hahsler.net/pomdpSolve/pomdp-solve_manual).
 
 ## References
 

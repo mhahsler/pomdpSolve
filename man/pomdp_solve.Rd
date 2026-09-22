@@ -30,7 +30,7 @@ Calling \code{pomdp_solve()} first cleans results from previous runs and then ex
 The options are specified in \code{options} as a list with entries of the form \verb{<option> = <value>}.
 \code{pomdp_solve_help()} displays the available options. Note that the leading dash is not used on the option name. For example:
 \code{list(method = "grid", epsilon = 0.1)} sets the method option to grid and epsilon to 0.1.
-Here is a slightly more \href{https://mhahsler.github.io/pomdpSolve/pomdp-solve_manual}{detailed description of pomdp-solve's options.}
+Here is a slightly more \href{https://michael.hahsler.net/pomdpSolve/pomdp-solve_manual}{detailed description of pomdp-solve's options.}
 }
 \examples{
 # display available options

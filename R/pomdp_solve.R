@@ -8,7 +8,7 @@
 #' The options are specified in `options` as a list with entries of the form `<option> = <value>`. 
 #' `pomdp_solve_help()` displays the available options. Note that the leading dash is not used on the option name. For example:
 #' `list(method = "grid", epsilon = 0.1)` sets the method option to grid and epsilon to 0.1.
-#' Here is a slightly more [detailed description of pomdp-solve's options.](https://mhahsler.github.io/pomdpSolve/pomdp-solve_manual)
+#' Here is a slightly more [detailed description of pomdp-solve's options.](https://michael.hahsler.net/pomdpSolve/pomdp-solve_manual)
 #' 
 #' 
 #' @param pomdp the POMDP file to solve.

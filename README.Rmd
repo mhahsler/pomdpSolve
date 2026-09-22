@@ -1,9 +1,5 @@
 ---
-output: 
-  github_document:
-    preserve_yaml: true
-  theme: slate
-
+output: github_document
 ---
 
 ```{r echo=FALSE, results = 'asis'}

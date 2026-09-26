@@ -4,3 +4,7 @@ README.Rmd
 docs
 .git
 Work
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

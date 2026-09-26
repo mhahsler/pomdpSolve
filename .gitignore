@@ -6,3 +6,4 @@ src/**/*.o
 src/**/*.a
 src/*.so
 src/*.dll
+/docs

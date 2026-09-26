@@ -1,9 +1,9 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://michael.hahsler.net/pomdpSolve/404.html</loc></url>
 <url><loc>https://michael.hahsler.net/pomdpSolve/authors.html</loc></url>
-<url><loc>https://michael.hahsler.net/pomdpSolve/docs/pomdp-solve_manual.html</loc></url>
 <url><loc>https://michael.hahsler.net/pomdpSolve/index.html</loc></url>
 <url><loc>https://michael.hahsler.net/pomdpSolve/news/index.html</loc></url>
+<url><loc>https://michael.hahsler.net/pomdpSolve/pomdp-solve_manual.html</loc></url>
 <url><loc>https://michael.hahsler.net/pomdpSolve/reference/find_pomdp_solve.html</loc></url>
 <url><loc>https://michael.hahsler.net/pomdpSolve/reference/index.html</loc></url>
 <url><loc>https://michael.hahsler.net/pomdpSolve/reference/pomdpSolve-package.html</loc></url>
